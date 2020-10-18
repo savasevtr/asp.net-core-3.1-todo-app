@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "SEProje.ToDo.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "SEProje.ToDo.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SEProje.ToDo.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SEProje.ToDo.DataAccess.dll": {}
+        }
+      },
+      "SEProje.ToDo.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/SEProje.ToDo.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SEProje.ToDo.Entities.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SEProje.ToDo.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../SEProje.ToDo.DataAccess/SEProje.ToDo.DataAccess.csproj",
+      "msbuildProject": "../SEProje.ToDo.DataAccess/SEProje.ToDo.DataAccess.csproj"
+    },
+    "SEProje.ToDo.Entities/1.0.0": {
+      "type": "project",
+      "path": "../SEProje.ToDo.Entities/SEProje.ToDo.Entities.csproj",
+      "msbuildProject": "../SEProje.ToDo.Entities/SEProje.ToDo.Entities.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "SEProje.ToDo.DataAccess >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\SE\\.nuget\\packages\\": {}
@@ -32,7 +69,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\SE\\source\\repos\\UdemyToDo\\SEProje.ToDo.DataAccess\\SEProje.ToDo.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\SE\\source\\repos\\UdemyToDo\\SEProje.ToDo.DataAccess\\SEProje.ToDo.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
