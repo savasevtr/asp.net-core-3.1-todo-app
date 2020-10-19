@@ -10,6 +10,7 @@ namespace SEProje.ToDo.Entities.Concrete
         public int Id { get; set; }
         public string Ad { get; set; }
         public string Aciklama { get; set; }
+        public bool Durum { get; set; }
         public DateTime OlusturmaTarihi { get; set; }
         public int KullaniciId { get; set; }
         public Kullanici kullanici { get; set; }

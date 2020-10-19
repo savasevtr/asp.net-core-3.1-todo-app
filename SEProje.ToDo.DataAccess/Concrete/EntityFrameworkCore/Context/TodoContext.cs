@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Mapping;
 using SEProje.ToDo.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,11 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context
             optionsBuilder.UseSqlServer("data source=localhost;Initial Catalog=UdemyTodo;Integrated Security=True");
         }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new KulaniciMap());
+            modelBuilder.ApplyConfiguration(new CalismaMap());
+        }
 
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Calisma> Calismalar { get; set; }
