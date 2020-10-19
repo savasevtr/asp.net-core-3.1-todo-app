@@ -2,3 +2,14 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\bin\Debug\netcoreapp3
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.csprojAssemblyReference.cache
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.AssemblyInfoInputs.cache
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.AssemblyInfo.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\bin\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.deps.json
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\bin\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.runtimeconfig.json
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\bin\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.runtimeconfig.dev.json
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\bin\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.dll
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\bin\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.pdb
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\bin\Debug\netcoreapp3.1\SEProje.ToDo.Entities.pdb
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.csproj.CopyComplete
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.dll
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.pdb
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DataAccess\obj\Debug\netcoreapp3.1\SEProje.ToDo.DataAccess.genruntimeconfig.cache
