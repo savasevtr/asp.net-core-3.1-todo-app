@@ -14,6 +14,8 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context
             optionsBuilder.UseSqlServer("data source=localhost;Initial Catalog=UdemyTodo;Integrated Security=True");
         }
 
+
+
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Calisma> Calismalar { get; set; }
     }
