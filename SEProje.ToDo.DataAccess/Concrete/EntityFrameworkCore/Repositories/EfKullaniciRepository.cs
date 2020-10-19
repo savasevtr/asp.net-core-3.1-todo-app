@@ -1,7 +1,8 @@
-﻿using SEProje.ToDo.DataAccess.Interfaces;
+﻿using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
+using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
 {
@@ -9,27 +10,45 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
     {
         public List<Kullanici> GetirHepsi()
         {
-            throw new NotImplementedException();
+            using (var context = new TodoContext())
+            {
+                return context.Kullanicilar.ToList();
+            }
         }
 
         public Kullanici GetirIdile(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new TodoContext())
+            {
+                return context.Kullanicilar.Find(id);
+            }
         }
 
         public void Güncelle(Kullanici tablo)
         {
-            throw new NotImplementedException();
+            using (var context = new TodoContext())
+            {
+                context.Kullanicilar.Update(tablo);
+                context.SaveChanges();
+            }
         }
 
         public void Kaydet(Kullanici tablo)
         {
-            throw new NotImplementedException();
+            using (var context = new TodoContext())
+            {
+                context.Kullanicilar.Add(tablo);
+                context.SaveChanges();
+            }
         }
 
         public void Sil(Kullanici tablo)
         {
-            throw new NotImplementedException();
+            using (var context = new TodoContext())
+            {
+                context.Kullanicilar.Remove(tablo);
+                context.SaveChanges();
+            }
         }
     }
 }
