@@ -26,7 +26,7 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
             }
         }
 
-        public void Güncelle(Tablo tablo)
+        public void Guncelle(Tablo tablo)
         {
             using (var context = new TodoContext())
             {

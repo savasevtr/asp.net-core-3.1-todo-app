@@ -9,7 +9,7 @@ namespace SEProje.ToDo.DataAccess.Interfaces
     {
         void Kaydet(Tablo tablo);
         void Sil(Tablo tablo);
-        void Güncelle(Tablo tablo);
+        void Guncelle(Tablo tablo);
         Tablo GetirIdile(int id);
         List<Tablo> GetirHepsi();
     }
