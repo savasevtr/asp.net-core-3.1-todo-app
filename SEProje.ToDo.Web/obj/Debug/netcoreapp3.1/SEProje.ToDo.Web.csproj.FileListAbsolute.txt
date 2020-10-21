@@ -146,3 +146,6 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEPr
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.RazorTargetAssemblyInfo.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.Views.pdb
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Sonuc.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Kategoriler.cshtml.g.cs

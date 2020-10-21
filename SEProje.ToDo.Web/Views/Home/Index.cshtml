@@ -1,6 +1,6 @@
-﻿
+﻿@model List<SEProje.ToDo.Web.Models.MusteriViewModel>
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -12,5 +12,20 @@
 </head>
 <body>
     <h1>Index</h1>
+
+    @Html.Partial("_Kategoriler")
+
+    <br />
+
+    <p>ViewBag.isim : @ViewBag.isim</p>
+    <p>ViewData.isim : @ViewData["isim"]</p>
+    <p>TempData.isim : @TempData["isim"]</p>
+
+    <hr />
+
+    @foreach (var item in Model)
+    {
+        <strong>@item.Ad</strong><br />
+    }
 </body>
 </html>
