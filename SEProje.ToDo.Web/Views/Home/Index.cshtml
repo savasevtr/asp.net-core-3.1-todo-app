@@ -13,31 +13,34 @@
 <body>
     <h1>Index</h1>
 
-    @*@Html.Partial("_Kategoriler")*@
-
     <partial name="_Kategoriler" />
 
-    <br />
+    @await Component.InvokeAsync("Urunler")
 
-    <a asp-action="Index" asp-controller="Home" asp-route-id="1">Link</a>
+    @*@Html.Partial("_Kategoriler")*@
 
-    <br />
+    @*
+        <br />
 
-    <SE></SE>
+        <a asp-action="Index" asp-controller="Home" asp-route-id="1">Link</a>
 
-    <SE gelen-data="www.duetron.com"></SE>
+        <br />
 
-    <br />
+        <SE></SE>
 
-    <p>ViewBag.isim : @ViewBag.isim</p>
-    <p>ViewData.isim : @ViewData["isim"]</p>
-    <p>TempData.isim : @TempData["isim"]</p>
+        <SE gelen-data="www.duetron.com"></SE>
 
-    <hr />
+        <br />
 
-    @foreach (var item in Model)
-    {
-        <strong>@item.Ad</strong><br />
-    }
+        <p>ViewBag.isim : @ViewBag.isim</p>
+        <p>ViewData.isim : @ViewData["isim"]</p>
+        <p>TempData.isim : @TempData["isim"]</p>
+
+        <hr />
+
+        @foreach (var item in Model)
+        {
+            <strong>@item.Ad</strong><br />
+        }*@
 </body>
 </html>
