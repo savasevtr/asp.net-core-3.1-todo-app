@@ -1,4 +1,4 @@
-﻿@model List<SEProje.ToDo.Web.Models.MusteriViewModel>
+﻿@model List<MusteriViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -14,6 +14,12 @@
     <h1>Index</h1>
 
     @Html.Partial("_Kategoriler")
+
+    <partial name="_Kategoriler" />
+
+    <br />
+
+    <a asp-action="Index" asp-controller="Home" asp-route-id="1">Link</a>
 
     <br />
 
