@@ -20,7 +20,7 @@ using SEProje.ToDo.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"43d387424db8d85f115eed57fc7813cf1bf9bed7", @"/Views/Home/Sonuc.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6c7b1506cd5b14ffea44b8f6e3a5b649dcc4bc4f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"71026cc53753d735173bc53936da845b8c1bbaf1", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Sonuc : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
