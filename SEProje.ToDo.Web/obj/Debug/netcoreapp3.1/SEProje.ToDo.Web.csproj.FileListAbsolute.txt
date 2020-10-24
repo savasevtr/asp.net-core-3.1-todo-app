@@ -155,3 +155,5 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\package.json
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\package-lock.json
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\KayitOl.cshtml.g.cs

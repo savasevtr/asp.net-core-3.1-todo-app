@@ -30,5 +30,19 @@ namespace SEProje.ToDo.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult KayitOl()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult KayitOl(KullaniciKayitViewModel model)
+        {
+            //string ad = HttpContext.Request.Form["Ad"].ToString();
+            //ViewBag.Ad = ad;
+
+            return View();
+        }
     }
 }

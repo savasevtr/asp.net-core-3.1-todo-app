@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SEProje.ToDo.Web.Middlewares;
 using Microsoft.AspNetCore.Routing.Constraints;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using SEProje.ToDo.Web.Constraints;
 
 namespace SEProje.ToDo.Web
@@ -39,6 +33,17 @@ namespace SEProje.ToDo.Web
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area}/{controller=Home}/{action=Index}/{id?}"
+                    );
+
+                //endpoints.MapAreaControllerRoute(
+                //    name: "areaAdmin",
+                //    areaName: "Admin",
+                //    pattern: "{area}/{controller}/{action}"
+                //    );
+
                 endpoints.MapControllerRoute(
                     name: "programlamaRoute",
                     pattern: "programlama/{dil}",
