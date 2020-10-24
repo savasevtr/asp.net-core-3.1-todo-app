@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using SEProje.ToDo.Web.Middlewares;
+using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using SEProje.ToDo.Web.Constraints;
 
 namespace SEProje.ToDo.Web
 {
@@ -31,19 +33,30 @@ namespace SEProje.ToDo.Web
 
             app.UseStaticFiles();
 
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "node_modules")),
-                RequestPath = "/content"
-            });
+            app.UseCustomStaticFiles();
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "programlamaRoute",
+                    pattern: "programlama/{dil}",
+                    defaults: new { controller = "Home", action = "Index" },
+                    constraints: new { dil = new Programlama() }
+                    );
+
+                endpoints.MapControllerRoute(
+                    name: "kisi",
+                    pattern: "kisiler",
+                    defaults: new { controller = "Home", action = "Index" }
+                    );
+           
+                endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}"
+                    //pattern: "{controller=Home}/{action=Index}/{id:int?}"
+                    pattern: "{controller=Home}/{action=Index}/{id?}",
+                    constraints: new { id = new IntRouteConstraint() }
                 );
             });
         }

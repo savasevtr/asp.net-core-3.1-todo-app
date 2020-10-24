@@ -7,6 +7,7 @@ using SEProje.ToDo.Web.Models;
 
 namespace SEProje.ToDo.Web.Controllers
 {
+    // [Route("kisiler/[action]")]
     public class HomeController : Controller
     {
         public IActionResult Index()
