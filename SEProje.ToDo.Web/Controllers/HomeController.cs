@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SEProje.ToDo.Web.Filters;
 using SEProje.ToDo.Web.Models;
 
 namespace SEProje.ToDo.Web.Controllers
@@ -36,21 +37,19 @@ namespace SEProje.ToDo.Web.Controllers
             return View();
         }
 
+        [CustomFilters]
         [HttpPost]
         public IActionResult KayitOl(KullaniciKayitViewModel model)
         {
             //string ad = HttpContext.Request.Form["Ad"].ToString();
             //ViewBag.Ad = ad;
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
 
-            ModelState.AddModelError(nameof(KullaniciKayitViewModel.Ad), "Ad alanı gereklidir!");
-            ModelState.AddModelError("", "Modelle ilgili hata");
-
-            return View(model);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -3,14 +3,6 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "jquery@3.4.1",
-      "destination": "wwwroot/jquery",
-      "files": [
-        "jquery.min.js",
-        "jquery.min.map"
-      ]
-    },
-    {
       "library": "twitter-bootstrap@4.4.1",
       "destination": "wwwroot/twitter-bootstrap/",
       "files": [
@@ -19,6 +11,24 @@
         "css/bootstrap.min.css.map",
         "js/bootstrap.min.js.map"
       ]
+    },
+    {
+      "library": "jquery@3.4.1",
+      "destination": "wwwroot/jquery",
+      "files": [
+        "jquery.min.js",
+        "jquery.min.map"
+      ]
+    },
+    {
+      "library": "jquery-validate@1.19.1",
+      "destination": "wwwroot/jqueryValidate",
+      "files": [ "jquery.validate.min.js" ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/jqueryUnob",
+      "files": ["jquery.validate.unobtrusive.min.js"]
     }
   ]
 }
