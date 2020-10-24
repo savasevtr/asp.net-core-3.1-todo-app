@@ -42,7 +42,15 @@ namespace SEProje.ToDo.Web.Controllers
             //string ad = HttpContext.Request.Form["Ad"].ToString();
             //ViewBag.Ad = ad;
 
-            return View();
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            ModelState.AddModelError(nameof(KullaniciKayitViewModel.Ad), "Ad alanı gereklidir!");
+            ModelState.AddModelError("", "Modelle ilgili hata");
+
+            return View(model);
         }
     }
 }

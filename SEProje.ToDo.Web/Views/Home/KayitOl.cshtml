@@ -1,4 +1,4 @@
-﻿
+﻿@model KullaniciKayitViewModel
 @{
     ViewData["Title"] = "KayitOl";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,9 +7,17 @@
 <h1>KayitOl</h1>
 
 <form class="shadow" action="KayitOl" method="post">
+
+    <div class="alert alert-warning" asp-validation-summary="ModelOnly"></div>
+
+    <div class="alert alert-danger" asp-validation-summary="All"></div>
+    
+    <br />
+
     <div class="form-group">
         <label>Ad</label>
         <input type="text" name="Ad" value="" class="form-control" />
+        <span class="text-danger" asp-validation-for="Ad"></span>
     </div>
 
     <button type="submit" class="btn btn-success btn-sm">Kaydet</button>
