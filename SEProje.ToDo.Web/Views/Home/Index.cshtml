@@ -17,6 +17,19 @@
 
     @await Component.InvokeAsync("Urunler")
 
+    <div class="alert alert-light lead">
+        @*@ViewBag.Cookie*@
+        @*@ViewBag.Session*@
+        
+        @{ 
+            KullaniciKayitViewModel kullaniciKayitViewModel = (KullaniciKayitViewModel)ViewBag.Session;
+        }
+        
+        @*Ad Soyad: @ViewBag.Session.Ad @ViewBag.Session.Soyad*@
+        
+        Ad Soyad: @kullaniciKayitViewModel.Ad @kullaniciKayitViewModel.Soyad
+    </div>
+
     @*@Html.Partial("_Kategoriler")*@
 
     @*

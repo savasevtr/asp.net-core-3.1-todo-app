@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SEProje.ToDo.Web.Extensions;
 using SEProje.ToDo.Web.Filters;
 using SEProje.ToDo.Web.Models;
 
@@ -16,6 +16,12 @@ namespace SEProje.ToDo.Web.Controllers
             ViewBag.isim = "Savaş";
             TempData["isim"] = "Ramo";
             ViewData["isim"] = "Deli Veli";
+
+            // SetCookie();
+            // ViewBag.Cookie = GetCookie();
+
+            SetSession();
+            ViewBag.Session = GetSession();
 
             return View(new List<MusteriViewModel>
             {
@@ -51,5 +57,41 @@ namespace SEProje.ToDo.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+        public void SetCookie()
+        {
+            HttpContext.Response.Cookies.Append("kisi", "savasev", new Microsoft.AspNetCore.Http.CookieOptions()
+            {
+                Expires = DateTime.Now.AddDays(20),
+                HttpOnly = true,
+                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                // Secure = true // https (ssl)
+            });
+        }
+
+        public string GetCookie()
+        {
+            return HttpContext.Request.Cookies["kisi"];
+        }
+
+        public void SetSession()
+        {
+            // HttpContext.Session.SetString("kisi", "savas.ev");
+            // HttpContext.Session.SetObject("kisi", "savas.ev");
+            HttpContext.Session.SetObject("kisi", new KullaniciKayitViewModel()
+            {
+                Ad = "Savaş",
+                Soyad = "Ev"
+            });
+        }
+
+        public KullaniciKayitViewModel GetSession()
+        {
+            // return HttpContext.Session.GetString("kisi");
+            // return HttpContext.Session.GetObject<string>("kisi");
+            return HttpContext.Session.GetObject<KullaniciKayitViewModel>("kisi");
+        }
+
     }
 }
