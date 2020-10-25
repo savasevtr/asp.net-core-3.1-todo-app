@@ -4,6 +4,7 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\libm
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\package.json
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\NLog.config
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\SEProje.ToDo.Web.exe
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\SEProje.ToDo.Web.deps.json
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\SEProje.ToDo.Web.runtimeconfig.json
@@ -51,6 +52,7 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\Micr
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\NLog.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
@@ -140,8 +142,10 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEPr
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.TagHelpers.output.cache
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.RazorCoreGenerate.cache
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Error.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\KayitOl.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\PageError.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Sonuc.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Urunler\Default.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Urunler\Yeni.cshtml.g.cs
@@ -157,5 +161,3 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\stat
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.pdb
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.genruntimeconfig.cache
-C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\PageError.cshtml.g.cs
-C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Error.cshtml.g.cs

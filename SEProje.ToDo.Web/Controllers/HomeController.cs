@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Web.Extensions;
 using SEProje.ToDo.Web.Filters;
+using SEProje.ToDo.Web.Logger;
 using SEProje.ToDo.Web.Models;
 
 namespace SEProje.ToDo.Web.Controllers
@@ -108,6 +109,10 @@ namespace SEProje.ToDo.Web.Controllers
         public IActionResult Error()
         {
             var exceptionHandlerPathFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+
+            NLogLogger nLogLogger = new NLogLogger();
+            nLogLogger.LogWithNLog($"hatanın oluştuğu yer : {exceptionHandlerPathFeature.Path} \n hata mesajı : {exceptionHandlerPathFeature.Error.Message} \n stack trace : {exceptionHandlerPathFeature.Error.StackTrace} \n\n");
+
             ViewBag.Path = exceptionHandlerPathFeature.Path;
             ViewBag.Message = exceptionHandlerPathFeature.Error.Message;
 
