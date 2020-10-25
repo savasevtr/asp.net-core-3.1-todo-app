@@ -26,6 +26,10 @@ namespace SEProje.ToDo.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            // app.UseStatusCodePages();
+
+            app.UseStatusCodePagesWithReExecute("/Home/PageError", "?code={0}");
+
             app.UseStaticFiles();
 
             app.UseCustomStaticFiles();

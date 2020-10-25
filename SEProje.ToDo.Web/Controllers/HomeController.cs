@@ -93,5 +93,17 @@ namespace SEProje.ToDo.Web.Controllers
             return HttpContext.Session.GetObject<KullaniciKayitViewModel>("kisi");
         }
 
+        public IActionResult PageError(int code)
+        {
+            ViewBag.Code = code;
+
+            if (code == 404)
+            {
+                ViewBag.ErrorMessage = "Sayfa bulunamadı";
+            }
+
+            return View();
+        }
+
     }
 }
