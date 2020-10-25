@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Web.Extensions;
@@ -58,7 +59,6 @@ namespace SEProje.ToDo.Web.Controllers
             return RedirectToAction("Index");
         }
 
-
         public void SetCookie()
         {
             HttpContext.Response.Cookies.Append("kisi", "savasev", new Microsoft.AspNetCore.Http.CookieOptions()
@@ -105,5 +105,18 @@ namespace SEProje.ToDo.Web.Controllers
             return View();
         }
 
+        public IActionResult Error()
+        {
+            var exceptionHandlerPathFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+            ViewBag.Path = exceptionHandlerPathFeature.Path;
+            ViewBag.Message = exceptionHandlerPathFeature.Error.Message;
+
+            return View();
+        }
+
+        public IActionResult Hata()
+        {
+            throw new Exception("Hata Oluştu!");
+        }
     }
 }

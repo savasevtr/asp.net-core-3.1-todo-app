@@ -25,6 +25,10 @@ namespace SEProje.ToDo.Web
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
 
             // app.UseStatusCodePages();
 
