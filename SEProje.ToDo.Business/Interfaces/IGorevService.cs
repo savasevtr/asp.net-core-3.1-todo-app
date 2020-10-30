@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SEProje.ToDo.Business.Interfaces
 {
-    public interface IKullaniciService : IGenericService<Kullanici>
+    public interface IGorevService : IGenericService<Gorev>
     {
 
     }

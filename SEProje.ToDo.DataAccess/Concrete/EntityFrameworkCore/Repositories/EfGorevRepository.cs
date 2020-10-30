@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
 {
-    public class EfCalismaRepository : EfGenericRepository<Calisma>, ICalismaDal
+    public class EfGorevRepository : EfGenericRepository<Gorev>, IGorevDal
     {
         
     }
