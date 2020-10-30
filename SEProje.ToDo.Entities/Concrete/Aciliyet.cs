@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using SEProje.ToDo.Entities.Interfaces;
+using System.Collections.Generic;
 
 namespace SEProje.ToDo.Entities.Concrete
 {
-    public class Aciliyet
+    public class Aciliyet : ITablo
     {
         public int Id { get; set; }
         public string Tanim { get; set; }

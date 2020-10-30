@@ -7,11 +7,11 @@ using System.Text;
 
 namespace SEProje.ToDo.Business.Concrete
 {
-    class RaportManager : IRaporService
+    class RaporManager : IRaporService
     {
         private readonly EfRaporRepository raporRepository;
 
-        public RaportManager()
+        public RaporManager()
         {
             raporRepository = new EfRaporRepository();
         }

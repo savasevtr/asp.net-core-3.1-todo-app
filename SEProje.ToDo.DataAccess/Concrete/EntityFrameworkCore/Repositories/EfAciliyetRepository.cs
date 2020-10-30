@@ -3,8 +3,8 @@ using SEProje.ToDo.Entities.Concrete;
 
 namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
 {
-    public class EfGorevRepository : EfGenericRepository<Gorev>, IGorevDal
+    public class EfAciliyetRepository : EfGenericRepository<Aciliyet>, IAciliyetDal
     {
-        
+
     }
 }
