@@ -13,7 +13,6 @@
         <tr>
             <th scope="col">Ad</th>
             <th scope="col">Aciklama</th>
-            <th scope="col">Durum</th>
             <th scope="col">Oluşturma Tarihi</th>
             <th scope="col">Aciliyet</th>
             <th class="text-center" style="width:15%" scope="col">İşlem</th>
@@ -27,9 +26,9 @@
                 <tr>
                     <td scope="row">@item.Ad</td>
                     <td>@item.Aciklama</td>
-                    <td>@item.Durum</td>
                     <td>@item.OlusturmaTarihi</td>
                     <td>@item.Aciliyet?.Tanim</td>
+
                     <td class="text-center">
                         <a asp-area="Admin" asp-action="GorevDuzenle" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Düzenle</a>
                         <a asp-area="Admin" asp-action="GorevSil" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-danger my-2">Sil</a>

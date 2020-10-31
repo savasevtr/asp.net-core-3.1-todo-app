@@ -21,7 +21,8 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<Gorev> gorevler = _gorevService.GetirHepsi();
+            List<Gorev> gorevler = _gorevService.GetirAciliyetIleTamamlanmayan();
+
             List<GorevListViewModel> models = new List<GorevListViewModel>();
 
             foreach (var item in gorevler)
@@ -67,5 +68,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
             return View(model);
         }
+
+
     }
 }
