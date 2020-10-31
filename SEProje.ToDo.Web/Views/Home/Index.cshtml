@@ -1,59 +1,10 @@
-﻿@model List<MusteriViewModel>
+﻿
 @{
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h1 class="mt-4">Simple Sidebar</h1>
+<p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <h1>Index</h1>
-
-    <partial name="_Kategoriler" />
-
-    @await Component.InvokeAsync("Urunler")
-
-    <div class="alert alert-light lead">
-        @*@ViewBag.Cookie*@
-        @*@ViewBag.Session*@
-        
-        @{ 
-            KullaniciKayitViewModel kullaniciKayitViewModel = (KullaniciKayitViewModel)ViewBag.Session;
-        }
-        
-        @*Ad Soyad: @ViewBag.Session.Ad @ViewBag.Session.Soyad*@
-        
-        Ad Soyad: @kullaniciKayitViewModel.Ad @kullaniciKayitViewModel.Soyad
-    </div>
-
-    @*@Html.Partial("_Kategoriler")*@
-
-    @*
-        <br />
-
-        <a asp-action="Index" asp-controller="Home" asp-route-id="1">Link</a>
-
-        <br />
-
-        <SE></SE>
-
-        <SE gelen-data="www.duetron.com"></SE>
-
-        <br />
-
-        <p>ViewBag.isim : @ViewBag.isim</p>
-        <p>ViewData.isim : @ViewData["isim"]</p>
-        <p>TempData.isim : @TempData["isim"]</p>
-
-        <hr />
-
-        @foreach (var item in Model)
-        {
-            <strong>@item.Ad</strong><br />
-        }*@
-</body>
-</html>

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProje.ToDo.Business", "SE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProje.ToDo.Entities", "SEProje.ToDo.Entities\SEProje.ToDo.Entities.csproj", "{F55EFDDA-13BC-415F-8715-3C1BB345B6F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProje.ToDo.Web", "SEProje.ToDo.Web\SEProje.ToDo.Web.csproj", "{75DF31B6-526C-4F55-8460-9B2266188EAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F55EFDDA-13BC-415F-8715-3C1BB345B6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55EFDDA-13BC-415F-8715-3C1BB345B6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F55EFDDA-13BC-415F-8715-3C1BB345B6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75DF31B6-526C-4F55-8460-9B2266188EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DF31B6-526C-4F55-8460-9B2266188EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75DF31B6-526C-4F55-8460-9B2266188EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75DF31B6-526C-4F55-8460-9B2266188EAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
