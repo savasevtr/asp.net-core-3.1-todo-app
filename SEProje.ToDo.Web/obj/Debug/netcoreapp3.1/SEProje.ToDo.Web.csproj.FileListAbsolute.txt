@@ -165,3 +165,4 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Gorev\Index.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Gorev\GorevEkle.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Gorev\GorevDuzenle.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\KayitOl.cshtml.g.cs
