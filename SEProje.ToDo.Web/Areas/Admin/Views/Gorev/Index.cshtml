@@ -24,17 +24,17 @@
         {
             @foreach (var item in Model)
             {
-        <tr>
-            <td>@item.Ad</td>
-            <td>@item.Aciklama</td>
-            <td>@item.Durum</td>
-            <td>@item.OlusturmaTarihi</td>
-            <td>@item.Aciliyet?.Tanim</td>
-            <td class="text-center">
-                <a asp-area="Admin" asp-action="GorevDuzenle" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Düzenle</a>
-                <a asp-area="Admin" asp-action="GorevSil" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-danger my-2">Sil</a>
-            </td>
-        </tr>
+                <tr>
+                    <td>@item.Ad</td>
+                    <td>@item.Aciklama</td>
+                    <td>@item.Durum</td>
+                    <td>@item.OlusturmaTarihi</td>
+                    <td>@item.Aciliyet?.Tanim</td>
+                    <td class="text-center">
+                        <a asp-area="Admin" asp-action="GorevDuzenle" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Düzenle</a>
+                        <a asp-area="Admin" asp-action="GorevSil" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-danger my-2">Sil</a>
+                    </td>
+                </tr>
             }
         }
         else
