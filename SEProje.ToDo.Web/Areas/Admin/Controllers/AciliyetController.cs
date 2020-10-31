@@ -56,5 +56,35 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
             return View(model);
         }
+
+        public IActionResult AciliyetDuzenle(int id)
+        {
+            var aciliyet = _aciliyetService.GetirIdile(id);
+
+            AciliyetEditViewModel model = new AciliyetEditViewModel
+            {
+                Id = aciliyet.Id,
+                Tanim = aciliyet.Tanim
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AciliyetDuzenle(AciliyetEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _aciliyetService.Guncelle(new Aciliyet
+                {
+                    Id = model.Id,
+                    Tanim = model.Tanim
+                });
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
     }
 }

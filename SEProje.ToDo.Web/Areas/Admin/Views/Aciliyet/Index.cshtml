@@ -4,14 +4,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h4 class="mt-4">Index</h4>
+<h4 class="mt-4">Aciliyet Listesi</h4>
 
-<a asp-action="AciliyetEkle" asp-controller="Aciliyet" class="btn btn-sm btn-primary my-2">Yeni Aciliyet Ekle</a>
+<a asp-area="Admin" asp-controller="Aciliyet" asp-action="AciliyetEkle" class="btn btn-sm btn-primary my-2">Yeni Aciliyet Ekle</a>
 
 <table class="table table-sm table-hover">
     <thead>
         <tr>
             <th>Tanım</th>
+            <th class="text-center" style="width:15%">İşlem</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,9 @@
             {
                 <tr>
                     <td>@item.Tanim</td>
+                    <td class="text-center">
+                        <a asp-area="Admin" asp-action="AciliyetDuzenle" asp-controller="Aciliyet" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Düzenle</a>
+                    </td>
                 </tr>
             }
         }
