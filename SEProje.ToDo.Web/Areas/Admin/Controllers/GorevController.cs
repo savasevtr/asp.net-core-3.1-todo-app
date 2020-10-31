@@ -69,6 +69,45 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             return View(model);
         }
 
+        public IActionResult GorevDuzenle(int id)
+        {
+            var gorev = _gorevService.GetirIdile(id);
 
+            GorevEditViewModel model = new GorevEditViewModel
+            {
+                Id = gorev.Id,
+                Ad = gorev.Ad,
+                Aciklama = gorev.Aciklama,
+                AciliyetId = gorev.AciliyetId
+            };
+
+            ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim", gorev.AciliyetId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult GorevDuzenle(GorevEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _gorevService.Guncelle(new Gorev()
+                {
+                    Id = model.Id,
+                    Ad = model.Ad,
+                    Aciklama = model.Aciklama,
+                    AciliyetId = model.AciliyetId
+                });
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
+
+        public IActionResult GorevSil(int id)
+        {
+            return View();
+        }
     }
 }
