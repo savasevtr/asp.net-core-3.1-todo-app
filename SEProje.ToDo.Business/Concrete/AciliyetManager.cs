@@ -1,5 +1,5 @@
 ﻿using SEProje.ToDo.Business.Interfaces;
-using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories;
+using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using System.Collections.Generic;
 
@@ -7,36 +7,36 @@ namespace SEProje.ToDo.Business.Concrete
 {
     public class AciliyetManager : IAciliyetService
     {
-        private readonly EfAciliyetRepository efAciliyetRepository;
+        private readonly IAciliyetDal _aciliyetDal;
 
-        public AciliyetManager()
+        public AciliyetManager(IAciliyetDal aciliyetDal)
         {
-            efAciliyetRepository = new EfAciliyetRepository();
+            _aciliyetDal = aciliyetDal;
         }
 
         public List<Aciliyet> GetirHepsi()
         {
-            return efAciliyetRepository.GetirHepsi();
+            return _aciliyetDal.GetirHepsi();
         }
 
         public Aciliyet GetirIdile(int id)
         {
-            return efAciliyetRepository.GetirIdile(id);
+            return _aciliyetDal.GetirIdile(id);
         }
 
         public void Guncelle(Aciliyet tablo)
         {
-            efAciliyetRepository.Guncelle(tablo);
+            _aciliyetDal.Guncelle(tablo);
         }
 
         public void Kaydet(Aciliyet tablo)
         {
-            efAciliyetRepository.Kaydet(tablo);
+            _aciliyetDal.Kaydet(tablo);
         }
 
         public void Sil(Aciliyet tablo)
         {
-            efAciliyetRepository.Sil(tablo);
+            _aciliyetDal.Sil(tablo);
         }
     }
 }

@@ -1,44 +1,42 @@
 ﻿using SEProje.ToDo.Business.Interfaces;
-using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories;
+using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SEProje.ToDo.Business.Concrete
 {
     public class GorevManager : IGorevService
     {
-        private readonly EfGorevRepository efCalismaRepository;
+        private readonly IGorevDal _gorevDal;
 
-        public GorevManager()
+        public GorevManager(IGorevDal gorevDal)
         {
-            efCalismaRepository = new EfGorevRepository();
+            _gorevDal = gorevDal;
         }
 
         public List<Gorev> GetirHepsi()
         {
-            return efCalismaRepository.GetirHepsi();
+            return _gorevDal.GetirHepsi();
         }
 
         public Gorev GetirIdile(int id)
         {
-            return efCalismaRepository.GetirIdile(id);
+            return _gorevDal.GetirIdile(id);
         }
 
         public void Guncelle(Gorev tablo)
         {
-            efCalismaRepository.Guncelle(tablo);
+            _gorevDal.Guncelle(tablo);
         }
 
         public void Kaydet(Gorev tablo)
         {
-            efCalismaRepository.Kaydet(tablo);
+            _gorevDal.Kaydet(tablo);
         }
 
         public void Sil(Gorev tablo)
         {
-            efCalismaRepository.Sil(tablo);
+            _gorevDal.Sil(tablo);
         }
     }
 }
