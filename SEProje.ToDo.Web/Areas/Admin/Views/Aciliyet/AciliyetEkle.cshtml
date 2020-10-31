@@ -1,0 +1,24 @@
+﻿@model AciliyetAddViewModel
+@{
+    ViewData["Title"] = "Yeni Aciliyet Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="mt-4">Yeni Aciliyet Ekle</h4>
+
+<form class="w-50 my-2 p-3" asp-area="Admin" asp-controller="Aciliyet" asp-action="AciliyetEkle" method="post">
+
+    <div class="form-group">
+        <label asp-for="Tanim"></label>
+        <input asp-for="Tanim" class="form-control" />
+        <span class="text-danger" asp-validation-for="Tanim"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-sm">Kaydet</button>
+
+</form>
+
+@section Scripts {
+    <script src="~/lib/jqueryValidate/jquery.validate.min.js"></script>
+    <script src="~/lib/jqueryUnobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,12 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
@@ -23,7 +21,9 @@
         <div class="border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Admin Panel</div>
             <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action active">Görev İşlemleri</a>
+                
+                <a asp-area="Admin" asp-controller="Aciliyet" asp-action="Index" class="list-group-item list-group-item-action">Aciliyet İşlemleri</a>
+
                 <a href="#" class="list-group-item list-group-item-action">Shortcuts</a>
                 <a href="#" class="list-group-item list-group-item-action">Overview</a>
                 <a href="#" class="list-group-item list-group-item-action">Events</a>
@@ -81,6 +81,8 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });</script>
+
+    @RenderSection("Scripts", false)
 
 </body>
 

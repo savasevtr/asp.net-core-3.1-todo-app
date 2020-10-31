@@ -1,0 +1,34 @@
+﻿@model List<AciliyetListViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="mt-4">Index</h4>
+
+<a asp-action="AciliyetEkle" asp-controller="Aciliyet" class="btn btn-sm btn-primary my-2">Yeni Aciliyet Ekle</a>
+
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th>Tanım</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count > 0)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Tanim</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr class="text-center text-danger">
+                <td colspan="1">Sistemde kayıtlı aciliyet bulunamadı!</td>
+            </tr>
+        }
+    </tbody>
+</table>
