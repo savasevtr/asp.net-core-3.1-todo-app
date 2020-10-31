@@ -107,7 +107,9 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
         public IActionResult GorevSil(int id)
         {
-            return View();
+            _gorevService.Sil(new Gorev { Id = id });
+
+            return Json(null);
         }
     }
 }

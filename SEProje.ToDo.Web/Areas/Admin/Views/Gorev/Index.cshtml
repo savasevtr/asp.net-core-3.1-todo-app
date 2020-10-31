@@ -31,7 +31,7 @@
 
                     <td class="text-center">
                         <a asp-area="Admin" asp-action="GorevDuzenle" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Düzenle</a>
-                        <a asp-area="Admin" asp-action="GorevSil" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-danger my-2">Sil</a>
+                        <a data-id="@item.Id" data-toggle="modal" data-target="#gorevSilModal" class="btn btn-sm btn-danger my-2">Sil</a>
                     </td>
                 </tr>
             }
@@ -44,3 +44,54 @@
         }
     </tbody>
 </table>
+
+<div class="modal fade" id="gorevSilModal" tabindex="-1" role="dialog" aria-labelledby="gorevSilModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Uyarı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Silmek istediğinizden emin misiniz?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Vazgeç</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btnDelete">Evet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+
+            $('#gorevSilModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var id = button.data('id');
+                var modal = $(this);
+
+                $('#btnDelete').click(function () {
+
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Admin/Gorev/GorevSil/',
+                        data: { id: id },
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8;',
+                        success: function () {
+                            alert("Silme işlemi tamamlandı");
+                            window.location.reload();
+                        },
+                    })
+                });
+            });
+
+        });
+
+    </script>
+}
