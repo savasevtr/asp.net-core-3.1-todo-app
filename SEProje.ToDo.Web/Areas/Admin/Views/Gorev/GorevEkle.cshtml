@@ -1,0 +1,38 @@
+﻿@model GorevAddViewModel
+@{
+    ViewData["Title"] = "Yeni Görev Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="mt-4">Yeni Görev Ekle</h4>
+
+<form class="w-50 my-2 p-3" asp-area="Admin" asp-controller="Gorev" asp-action="GorevEkle" method="post">
+
+    <div class="form-group">
+        <label asp-for="Ad"></label>
+        <input asp-for="Ad" class="form-control" />
+        <span class="text-danger" asp-validation-for="Ad"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Aciklama"></label>
+        <textarea asp-for="Aciklama" class="form-control"></textarea>
+        <span class="text-danger" asp-validation-for="Aciklama"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AciliyetId"></label>
+        <select asp-for="AciliyetId" class="form-control" asp-items="@ViewBag.Aciliyetler">
+            <option value="-1">Seçiniz</option>
+        </select>
+        <span class="text-danger" asp-validation-for="AciliyetId"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-sm">Kaydet</button>
+
+</form>
+
+@section Scripts {
+    <script src="~/lib/jqueryValidate/jquery.validate.min.js"></script>
+    <script src="~/lib/jqueryUnobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

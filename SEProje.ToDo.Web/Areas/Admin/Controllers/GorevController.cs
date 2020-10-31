@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Areas.Admin.Models;
@@ -10,10 +11,12 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
     public class GorevController : Controller
     {
         private readonly IGorevService _gorevService;
+        private readonly IAciliyetService _aciliyetService;
 
-        public GorevController(IGorevService gorevService)
+        public GorevController(IGorevService gorevService, IAciliyetService aciliyetService)
         {
             _gorevService = gorevService;
+            _aciliyetService = aciliyetService;
         }
 
         public IActionResult Index()
@@ -38,6 +41,31 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             }
 
             return View(models);
+        }
+
+        public IActionResult GorevEkle()
+        {
+            ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim");
+
+            return View(new GorevAddViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult GorevEkle(GorevAddViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _gorevService.Kaydet(new Gorev
+                {
+                    Aciklama = model.Aciklama,
+                    Ad = model.Ad,
+                    AciliyetId = model.AciliyetId
+                });
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
     }
 }
