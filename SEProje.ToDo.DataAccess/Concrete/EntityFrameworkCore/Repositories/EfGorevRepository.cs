@@ -16,5 +16,19 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                 return context.Gorevler.Where(x => x.Durum == false).Include(x => x.Aciliyet).OrderByDescending(x => x.OlusturmaTarihi).ToList();
             }
         }
+
+        public List<Gorev> GetirTumTablolarla()
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler
+                    .Include(x => x.Aciliyet)
+                    .Include(x => x.Raporlar)
+                    .Include(x => x.AppUser)
+                    .Where(x => !x.Durum)
+                    .OrderByDescending(x => x.OlusturmaTarihi)
+                    .ToList();
+            }
+        }
     }
 }
