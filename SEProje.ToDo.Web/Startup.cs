@@ -9,6 +9,7 @@ using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
 using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
+using System;
 
 namespace SEProje.ToDo.Web
 {
@@ -35,6 +36,16 @@ namespace SEProje.ToDo.Web
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<TodoContext>();
+
+            services.ConfigureApplicationCookie(opt =>
+            {
+                opt.Cookie.Name = "IsTakipCookie";
+                opt.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict;
+                opt.Cookie.HttpOnly = true;
+                opt.ExpireTimeSpan = TimeSpan.FromDays(20);
+                opt.Cookie.SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.SameAsRequest;
+                opt.LoginPath = "/Home/Index";
+            });
 
             services.AddControllersWithViews();
         }
