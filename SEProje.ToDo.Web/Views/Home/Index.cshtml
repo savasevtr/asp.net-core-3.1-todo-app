@@ -1,10 +1,33 @@
-﻿
+﻿@model AppUserSignInViewModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Giriş Yap";
     Layout = "~/Views/Shared/_StandartLayout.cshtml";
 }
 
-<h4 class="mt-4">Index</h4>
+<div class="container">
+    <div class="col-12">
+        <h4 class="text-center mt-5">Kullanıcı Girişi</h4>
 
-<a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Sayfası</a>
-<a asp-area="Member">Üye Sayfası</a>
+        <form asp-controller="Home" asp-action="Index" method="post" class="shadow w-50 mx-auto p-3 mt-4">
+
+            <div class="form-group">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <button type="submit" class="btn btn-outline-success btn-sm">Giriş Yap</button>
+
+            <a asp-controller="Home" asp-action="KayitOl" class="btn btn-outline-primary btn-sm float-right">Kayıt Ol</a>
+
+        </form>
+    </div>
+</div>

@@ -17,16 +17,27 @@ namespace SEProje.ToDo.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new AppUserSignInViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult Index(AppUserSignInViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            return View(model);
         }
 
         public IActionResult KayitOl()
         {
-            return View(new AppUserAddViewModel());
+            return View(new AppUserRegisterViewModel());
         }
 
         [HttpPost]
-        public async Task<IActionResult> KayitOl(AppUserAddViewModel model)
+        public async Task<IActionResult> KayitOl(AppUserRegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +57,7 @@ namespace SEProje.ToDo.Web.Controllers
 
                     if (addRoleResult.Succeeded)
                     {
-                        return RedirectToAction("GirisYap");
+                        return RedirectToAction("Index");
                     }
 
                     foreach (var item in addRoleResult.Errors)
@@ -63,12 +74,5 @@ namespace SEProje.ToDo.Web.Controllers
 
             return View(model);
         }
-
-        public IActionResult GirisYap()
-        {
-            return View();
-        }
-
-
     }
 }

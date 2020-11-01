@@ -2,7 +2,7 @@
 
 namespace SEProje.ToDo.Web.Models
 {
-    public class AppUserAddViewModel
+    public class AppUserRegisterViewModel
     {
         [Display(Name = "Kullanıcı Adı")]
         [Required(ErrorMessage = "Kullanıcı adı boş geçilemez")]

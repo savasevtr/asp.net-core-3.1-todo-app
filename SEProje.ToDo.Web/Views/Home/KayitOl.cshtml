@@ -1,4 +1,4 @@
-﻿@model AppUserAddViewModel
+﻿@model AppUserRegisterViewModel
 @{
     ViewData["Title"] = "Kayıt Ol";
     Layout = "~/Views/Shared/_StandartLayout.cshtml";
@@ -50,6 +50,7 @@
 
             <button type="submit" class="btn btn-outline-success btn-sm">Kayıt Ol</button>
 
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary btn-sm float-right">Giriş Yap</a>
         </form>
     </div>
 </div>
