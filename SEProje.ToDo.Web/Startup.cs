@@ -59,6 +59,8 @@ namespace SEProje.ToDo.Web
             }
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
             IdentityInitializer.SeedData(userManager, roleManager).Wait();
             app.UseStaticFiles();
 

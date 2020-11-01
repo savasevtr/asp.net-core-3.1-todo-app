@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SEProje.ToDo.Business.Interfaces;
@@ -7,6 +8,7 @@ using SEProje.ToDo.Web.Areas.Admin.Models;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class GorevController : Controller
     {

@@ -9,10 +9,12 @@ namespace SEProje.ToDo.Web.Controllers
     public class HomeController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public HomeController(UserManager<AppUser> userManager)
+        public HomeController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult Index()
@@ -21,11 +23,42 @@ namespace SEProje.ToDo.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(AppUserSignInViewModel model)
+        public async Task<IActionResult> Index(AppUserSignInViewModel model)
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.FindByNameAsync(model.UserName);
 
+                if (user != null)
+                {
+                    var identityResult = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
+
+                    if (identityResult.Succeeded)
+                    {
+                        var roller = await _userManager.GetRolesAsync(user);
+
+                        if (roller.Contains("Admin"))
+                        {
+                            return RedirectToAction("Index", "Home", new { area = "Admin" });
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home", new { area = "Member" });
+                        }
+                    }
+
+                    if (identityResult.IsNotAllowed)
+                    {
+
+                    }
+
+                    if (identityResult.IsLockedOut)
+                    {
+
+                    }
+                }
+
+                ModelState.AddModelError("", "Kullanıcı adı veya şifre hatalı!");
             }
 
             return View(model);

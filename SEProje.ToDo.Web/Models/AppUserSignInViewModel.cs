@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace SEProje.ToDo.Web.Models
 {
@@ -16,5 +12,8 @@ namespace SEProje.ToDo.Web.Models
         [Required(ErrorMessage = "Parola alanı boş geçilemez")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [Display(Name = "Beni Hatırla")]
+        public bool RememberMe { get; set; }
     }
 }
