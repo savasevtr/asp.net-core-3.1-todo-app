@@ -1,0 +1,32 @@
+﻿@model GorevListViewModel
+@{
+    ViewData["Title"] = "Personel Ata";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="mt-4">Personel Ata</h4>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="text-center lead">Görev Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <div class="card-title">@Model.Ad</div>
+                <p class="card-text">
+                    @Model.Aciklama
+                </p>
+                <p class="card-text">
+                    <strong>Aciliyet Durumu:</strong><span class="badge badge-info">@Model.Aciliyet.Tanim</span>
+                </p>
+                <p class="card-text">
+                    <small>@Model.OlusturmaTarihi.ToString("D")</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+</div>

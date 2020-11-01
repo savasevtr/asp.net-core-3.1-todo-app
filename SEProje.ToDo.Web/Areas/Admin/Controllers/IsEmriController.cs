@@ -44,5 +44,21 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
             return View(models);
         }
+
+        public IActionResult PersonelAta(int id)
+        {
+            var gorev = _gorevService.GetirAclliyetIleId(id);
+
+            GorevListViewModel model = new GorevListViewModel()
+            {
+                Id = gorev.Id,
+                Ad = gorev.Ad,
+                Aciklama = gorev.Aciklama,
+                Aciliyet = gorev.Aciliyet,
+                OlusturmaTarihi = gorev.OlusturmaTarihi,
+            };
+
+            return View(model);
+        }
     }
 }

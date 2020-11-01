@@ -48,5 +48,43 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                 return result;
             }
         }
+
+        public List<AppUser> GetirAdminOlmayanlar(string aranacakKelime, int aktifSayfa = 1)
+        {
+            using (var context = new TodoContext())
+            {
+                var result = context.Users
+                    .Join(context.UserRoles, user => user.Id, userRole => userRole.UserId, (resultUser, resultUserRole) => new
+                    {
+                        user = resultUser,
+                        userRole = resultUserRole
+                    })
+                    .Join(context.Roles, twoTableResult => twoTableResult.userRole.RoleId, role => role.Id, (resultTable, resultRole) => new
+                    {
+                        user = resultTable.user,
+                        userRoles = resultTable.userRole,
+                        roles = resultRole
+                    })
+                    .Where(x => x.roles.Name != "Admin")
+                    .Select(x => new AppUser()
+                    {
+                        Id = x.user.Id,
+                        Name = x.user.Name,
+                        Surname = x.user.Surname,
+                        Picture = x.user.Picture,
+                        Email = x.user.Email,
+                        UserName = x.user.UserName
+                    });
+
+                if (!string.IsNullOrWhiteSpace(aranacakKelime))
+                {
+                    result.Where(x => x.Name.ToLower().Contains(aranacakKelime.ToLower()) || x.Surname.ToLower().Contains(aranacakKelime.ToLower()));
+                }
+
+                result.Skip((aktifSayfa - 1) * 3).Take(3);
+
+                return result.ToList();
+            }
+        }
     }
 }
