@@ -19,6 +19,11 @@ namespace SEProje.ToDo.Business.Concrete
             return _gorevDal.GetirAciliyetIleTamamlanmayan();
         }
 
+        public Gorev GetirAclliyetIleId(int id)
+        {
+            return _gorevDal.GetirAciliyetileId(id);
+        }
+
         public List<Gorev> GetirHepsi()
         {
             return _gorevDal.GetirHepsi();

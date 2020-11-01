@@ -17,6 +17,7 @@
             <th>Oluşturma Tarihi</th>
             <th>Çalışan Personel</th>
             <th>Aciliyet</th>
+            <th>Rapor Sayısı</th>
             <th class="text-center" style="width:15%">İşlem</th>
         </tr>
     </thead>
@@ -33,7 +34,7 @@
                 @{
                     if (item.AppUser == null)
                     {
-                        <span class="badge badge-danger">Çalışan personel yok</span>
+                        <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm">Personel Ata</a>
                     }
                     else
                     {
@@ -42,6 +43,7 @@
                 }
             </td>
             <td>@item.Aciliyet?.Tanim</td>
+            <td>@item.Raporlar.Count</td>
             <td class="text-center">
                 <a asp-area="Admin" asp-action="GorevDuzenle" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Düzenle</a>
                 <a data-id="@item.Id" data-toggle="modal" data-target="#gorevSilModal" class="btn btn-sm btn-danger my-2">Sil</a>

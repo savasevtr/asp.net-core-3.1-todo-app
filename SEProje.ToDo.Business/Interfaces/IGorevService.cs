@@ -7,5 +7,6 @@ namespace SEProje.ToDo.Business.Interfaces
     {
         List<Gorev> GetirAciliyetIleTamamlanmayan();
         List<Gorev> GetirTumTablolarla();
+        Gorev GetirAclliyetIleId(int id);
     }
 }
