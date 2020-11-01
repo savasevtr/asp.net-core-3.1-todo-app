@@ -1,0 +1,52 @@
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
+using SEProje.ToDo.DataAccess.Interfaces;
+using SEProje.ToDo.Entities.Concrete;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
+{
+    public class EfAppUserRepository : EfGenericRepository<AppUser>, IAppUserDal
+    {
+        public List<AppUser> GetirAdminOlmayanlar()
+        {
+            using (var context = new TodoContext())
+            {
+                /*
+                    select * from AspNetUsers
+                    inner join AspNetUserRoles
+                    on AspNetUsers.Id = AspNetUserRoles.UserId
+                    inner join AspNetRoles
+                    on AspNetUserRoles.RoleId = AspNetRoles.Id
+                    where AspNetRoles.Name = 'Member'
+                 */
+
+                var result = context.Users
+                    .Join(context.UserRoles, user => user.Id, userRole => userRole.UserId, (resultUser, resultUserRole) => new
+                    {
+                        user = resultUser,
+                        userRole = resultUserRole
+                    })
+                    .Join(context.Roles, twoTableResult => twoTableResult.userRole.RoleId, role => role.Id, (resultTable, resultRole) => new
+                    {
+                        user = resultTable.user,
+                        userRoles = resultTable.userRole,
+                        roles = resultRole
+                    })
+                    .Where(x => x.roles.Name != "Admin")
+                    .Select(x => new AppUser()
+                    {
+                        Id = x.user.Id,
+                        Name = x.user.Name,
+                        Surname = x.user.Surname,
+                        Picture = x.user.Picture,
+                        Email = x.user.Email,
+                        UserName = x.user.UserName
+                    }).ToList();
+
+                return result;
+            }
+        }
+    }
+}

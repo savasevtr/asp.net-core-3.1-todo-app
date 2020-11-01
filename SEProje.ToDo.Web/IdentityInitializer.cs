@@ -34,7 +34,7 @@ namespace SEProje.ToDo.Web
                     Email = "savas.ev@yahoo.com"
                 };
 
-                await userManager.CreateAsync(user, "1");
+                await userManager.CreateAsync(user, "q1w2e3r4");
 
                 await userManager.AddToRoleAsync(user, "Admin");
             }
