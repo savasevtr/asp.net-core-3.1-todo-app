@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Areas.Admin.Models;
+using System;
 using System.Collections.Generic;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
@@ -45,9 +46,31 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             return View(models);
         }
 
-        public IActionResult PersonelAta(int id)
+        public IActionResult PersonelAta(int id, string search, int page = 1)
         {
+            ViewBag.currentPage = page;
+            ViewBag.pageCount = (int)Math.Ceiling((double)_appUserService.GetirAdminOlmayanlar().Count / 3);
+
             var gorev = _gorevService.GetirAclliyetIleId(id);
+            var personeller = _appUserService.GetirAdminOlmayanlar(search, page);
+
+            List<AppUserListViewModel> appUserListViewModels = new List<AppUserListViewModel>();
+
+            foreach (var item in personeller)
+            {
+                AppUserListViewModel appUserListViewModel = new AppUserListViewModel()
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    Surname = item.Surname,
+                    Email = item.Email,
+                    Picture = item.Picture
+                };
+
+                appUserListViewModels.Add(appUserListViewModel);
+            }
+
+            ViewBag.Personeller = appUserListViewModels;
 
             GorevListViewModel model = new GorevListViewModel()
             {

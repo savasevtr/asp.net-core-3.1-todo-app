@@ -78,10 +78,10 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
 
                 if (!string.IsNullOrWhiteSpace(aranacakKelime))
                 {
-                    result.Where(x => x.Name.ToLower().Contains(aranacakKelime.ToLower()) || x.Surname.ToLower().Contains(aranacakKelime.ToLower()));
+                    result = result.Where(x => x.Name.ToLower().Contains(aranacakKelime.ToLower()) || x.Surname.ToLower().Contains(aranacakKelime.ToLower()));
                 }
 
-                result.Skip((aktifSayfa - 1) * 3).Take(3);
+                result = result.Skip((aktifSayfa - 1) * 3).Take(3);
 
                 return result.ToList();
             }
