@@ -6,6 +6,6 @@ namespace SEProje.ToDo.Business.Interfaces
     public interface IAppUserService
     {
         List<AppUser> GetirAdminOlmayanlar();
-        List<AppUser> GetirAdminOlmayanlar(string aranacakKelime, int aktifSayfa = 1);
+        List<AppUser> GetirAdminOlmayanlar(out int pageCount, string search, int currentPage = 1);
     }
 }

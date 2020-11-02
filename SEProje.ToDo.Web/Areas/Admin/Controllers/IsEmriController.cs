@@ -49,10 +49,13 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
         public IActionResult PersonelAta(int id, string search, int page = 1)
         {
             ViewBag.currentPage = page;
-            ViewBag.pageCount = (int)Math.Ceiling((double)_appUserService.GetirAdminOlmayanlar().Count / 3);
+            // ViewBag.pageCount = (int)Math.Ceiling((double)_appUserService.GetirAdminOlmayanlar().Count / 3);
+
+            int pageCount;
 
             var gorev = _gorevService.GetirAclliyetIleId(id);
-            var personeller = _appUserService.GetirAdminOlmayanlar(search, page);
+            var personeller = _appUserService.GetirAdminOlmayanlar(out pageCount, search, page);
+            ViewBag.pageCount = pageCount;
 
             List<AppUserListViewModel> appUserListViewModels = new List<AppUserListViewModel>();
 

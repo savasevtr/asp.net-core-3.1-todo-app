@@ -2,6 +2,7 @@
 using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
 using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -49,7 +50,7 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
             }
         }
 
-        public List<AppUser> GetirAdminOlmayanlar(string aranacakKelime, int aktifSayfa = 1)
+        public List<AppUser> GetirAdminOlmayanlar(out int pageCount, string search, int currentPage = 1)
         {
             using (var context = new TodoContext())
             {
@@ -76,12 +77,14 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                         UserName = x.user.UserName
                     });
 
-                if (!string.IsNullOrWhiteSpace(aranacakKelime))
+                if (!string.IsNullOrWhiteSpace(search))
                 {
-                    result = result.Where(x => x.Name.ToLower().Contains(aranacakKelime.ToLower()) || x.Surname.ToLower().Contains(aranacakKelime.ToLower()));
+                    result = result.Where(x => x.Name.ToLower().Contains(search.ToLower()) || x.Surname.ToLower().Contains(search.ToLower()));
                 }
 
-                result = result.Skip((aktifSayfa - 1) * 3).Take(3);
+                pageCount = (int)Math.Ceiling((double)result.Count() / 3);
+
+                result = result.Skip((currentPage - 1) * 3).Take(3);
 
                 return result.ToList();
             }
