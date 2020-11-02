@@ -49,6 +49,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
         public IActionResult PersonelAta(int id, string search, int page = 1)
         {
             ViewBag.currentPage = page;
+            ViewBag.search = search;
             // ViewBag.pageCount = (int)Math.Ceiling((double)_appUserService.GetirAdminOlmayanlar().Count / 3);
 
             int pageCount;

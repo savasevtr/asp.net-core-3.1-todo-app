@@ -2,9 +2,26 @@
 @{
     ViewData["Title"] = "Personel Ata";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    string search = (string)ViewBag.search;
 }
 
 <h4 class="mt-4">Personel Ata</h4>
+
+<div class="row mb-2">
+    <div class="col-md-12">
+        @if (!string.IsNullOrWhiteSpace(search))
+        {
+            <div class="border border-dark p-3 mb-2">
+                <strong>@search</strong> kelimesi için arama sonuçları:
+                <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.Id" class="float-right">Aramayı Temizle</a>
+            </div>
+        }
+        <form asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" method="get" class="text-right">
+            <input type="text" name="search" value="@search" class="form-control-sm border border-primary border-top-0 border-left-0 border-right-0" />
+            <button type="submit" class="btn btn-sm btn-success">Ara</button>
+        </form>
+    </div>
+</div>
 
 <div class="row mt-4">
     <div class="col-md-4">
@@ -27,9 +44,10 @@
         </div>
     </div>
     <div class="col-md-8">
+
         @foreach (var item in (List<AppUserListViewModel>)ViewBag.Personeller)
         {
-            <div class="card mb-3">
+            <div class="card mb-3 border border-primary">
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <img src="~/img/@item.Picture" alt="@item.Name" />
@@ -54,7 +72,16 @@
                 @for (int i = 1; i <= (int)@ViewBag.pageCount; i++)
                 {
                     <li class="page-item @(ViewBag.currentPage == i ? "active" : "")">
-                        <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.Id" asp-route-page="@i" class="page-link">@i</a>
+
+                        @if (!string.IsNullOrWhiteSpace(search))
+                        {
+                            <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.Id" asp-route-page="@i" asp-route-search="@search" class="page-link">@i</a>
+                        }
+                        else
+                        {
+                            <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.Id" asp-route-page="@i" class="page-link">@i</a>
+                        }
+
                     </li>
                 }
             </ul>
