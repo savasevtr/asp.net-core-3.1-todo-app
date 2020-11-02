@@ -49,8 +49,8 @@
         {
             <div class="card mb-3 border border-primary">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="~/img/@item.Picture" alt="@item.Name" />
+                    <div class="col-md-4 p-4">
+                        <img src="~/img/@item.Picture" alt="@item.Name" class="img-fluid card-img p-4 shadow img-thumbnail" />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -60,6 +60,7 @@
                             </p>
                             <p class="card-text">
                                 <small class="text-muted">@item.Email</small>
+                                <a href="#" class="btn btn-success btn-sm float-right">Görevlendir!</a>
                             </p>
                         </div>
                     </div>
@@ -72,7 +73,6 @@
                 @for (int i = 1; i <= (int)@ViewBag.pageCount; i++)
                 {
                     <li class="page-item @(ViewBag.currentPage == i ? "active" : "")">
-
                         @if (!string.IsNullOrWhiteSpace(search))
                         {
                             <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.Id" asp-route-page="@i" asp-route-search="@search" class="page-link">@i</a>
@@ -81,7 +81,6 @@
                         {
                             <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.Id" asp-route-page="@i" class="page-link">@i</a>
                         }
-
                     </li>
                 }
             </ul>
