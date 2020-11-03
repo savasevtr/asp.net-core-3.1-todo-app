@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Areas.Admin.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
@@ -14,11 +16,12 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
     {
         private readonly IAppUserService _appUserService;
         private readonly IGorevService _gorevService;
-
-        public IsEmriController(IAppUserService appUserService, IGorevService gorevService)
+        private readonly UserManager<AppUser> _userManager;
+        public IsEmriController(IAppUserService appUserService, IGorevService gorevService, UserManager<AppUser> userManager)
         {
             _appUserService = appUserService;
             _gorevService = gorevService;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -86,6 +89,16 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             };
 
             return View(model);
+        }
+
+        public IActionResult GorevlendirPersonel(PersonelGorevlendirViewModel model)
+        {
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == model.PersonelId);
+            var gorev = _gorevService.GetirAclliyetIleId(model.GorevId);
+
+
+
+            return View();
         }
     }
 }

@@ -25,6 +25,13 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
             }
         }
 
+        public List<Gorev> GetirileAppUserId(int appUserId)
+        {
+            using var context = new TodoContext();
+
+            return context.Gorevler.Where(x => x.AppUserId == appUserId).ToList();
+        }
+
         public List<Gorev> GetirTumTablolarla()
         {
             using (var context = new TodoContext())
