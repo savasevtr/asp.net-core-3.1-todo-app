@@ -18,7 +18,7 @@
             <th>Aciliyet</th>
             <th>Rapor Sayısı</th>
             <th class="text-center">Çalışan Personel</th>
-            @*<th class="text-center" style="width:15%">İşlem</th>*@
+            <th class="text-center" style="width:15%">İşlem</th>
         </tr>
     </thead>
     <tbody>
@@ -44,10 +44,9 @@
                     }
                 }
             </td>
-            @*<td class="text-center">
-                <a asp-area="Admin" asp-action="GorevDuzenle" asp-controller="Gorev" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Düzenle</a>
-                <a data-id="@item.Id" data-toggle="modal" data-target="#gorevSilModal" class="btn btn-sm btn-danger my-2">Sil</a>
-            </td>*@
+            <td class="text-center">
+                <a asp-area="Admin" asp-action="Detaylar" asp-controller="IsEmri" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Detaylar</a>
+            </td>
         </tr>
             }
         }

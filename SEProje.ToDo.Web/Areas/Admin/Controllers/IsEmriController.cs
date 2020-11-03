@@ -130,5 +130,19 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Detaylar(int id)
+        {
+            var gorev = _gorevService.GetirRaporlarileId(id);
+
+            GorevListAllViewModel gorevListAllViewModel = new GorevListAllViewModel();
+            gorevListAllViewModel.Id = gorev.Id;
+            gorevListAllViewModel.Raporlar = gorev.Raporlar;
+            gorevListAllViewModel.Ad = gorev.Ad;
+            gorevListAllViewModel.Aciklama = gorev.Aciklama;
+            gorevListAllViewModel.AppUser = gorev.AppUser;
+
+            return View(gorevListAllViewModel);
+        }
     }
 }

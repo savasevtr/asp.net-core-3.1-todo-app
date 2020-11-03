@@ -1,0 +1,41 @@
+﻿@model GorevListAllViewModel
+@{
+    ViewData["Title"] = "Detaylar";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="mt-4">Detaylar</h4>
+
+@if (Model.Raporlar.Count > 0)
+{
+    <a href="" class="btn btn-outline-danger btn-sm my-3">Excelde Görüntüle</a>
+
+    <table class="table table-bordered table-striped table-hover my-3">
+        <thead>
+            <tr class="bg-info text-white">
+                <th colspan="2">
+                    @Model.AppUser.Name @Model.AppUser.Surname isimli personelin @Model.Ad görevi için yazmış olduğu raporlar:
+                </th>
+            </tr>
+            <tr>
+                <th>Tanım</th>
+                <th>Detay</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Raporlar)
+            {
+            <tr>
+                <td>@item.Tanim</td>
+                <td>@item.Detay</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        @Model.AppUser.Name @Model.AppUser.Surname adlı personel henüz @Model.Ad görevi için rapor eklemedi.
+    </div>
+}

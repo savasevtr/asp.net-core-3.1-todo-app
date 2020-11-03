@@ -45,5 +45,12 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                     .ToList();
             }
         }
+
+        public Gorev GetirRaporlarileId(int id)
+        {
+            using var context = new TodoContext();
+
+            return context.Gorevler.Include(x => x.Raporlar).Include(y => y.AppUser).Where(z => z.Id == id).FirstOrDefault();
+        }
     }
 }
