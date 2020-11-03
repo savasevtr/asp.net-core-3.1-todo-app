@@ -1,8 +1,63 @@
-﻿
+﻿@model PersonelGorevlendirListViewModel
 @{
     ViewData["Title"] = "GorevlendirPersonel";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>GorevlendirPersonel</h1>
+<h4 class="my-4">Personel Görevlendirme</h4>
 
+<div class="row">
+    <div class="col-md-12">
+        <form asp-area="Admin" asp-controller="IsEmri" asp-action="GorevlendirPersonelTamamla" method="post">
+            <input type="hidden" name="PersonelId" value="@Model.AppUserListViewModel.Id" />
+            <input type="hidden" name="GorevId" value="@Model.GorevListViewModel.Id" />
+            <div class="alert alert-info">
+                <p class="lead">Aşağıdaki göreve ilgili personel atanacaktır. Bu işlemi gerçekleştirmek istediğinizden emin misiniz?</p>
+            </div>
+            <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.GorevListViewModel.Id" class="btn btn-light">Vazgeç</a>
+            <button type="submit" class="btn btn-outline-success">Evet</button>
+        </form>
+    </div>
+</div>
+
+<div class="row my-4">
+    <div class="col-md-4">
+        <div class="card border border-primary">
+            <div class="card-header">
+                <h4 class="lead">Görev Bilgileri</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.GorevListViewModel.Ad</h5>
+                <p class="card-text">
+                    @Model.GorevListViewModel.Aciklama
+                </p>
+                <p class="card-text">
+                    <strong>Aciliyet Durumu: </strong> <span class="badge badge-primary">@Model.GorevListViewModel.Aciliyet.Tanim</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card border border-primary">
+            <div class="card-header">
+                <h4 class="lead">Personel Bilgileri</h4>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-4 p-4">
+                    <img src="~/img/@Model.AppUserListViewModel.Picture" class="card-img img-thumbnail shadow p-4" alt="@Model.AppUserListViewModel.Name" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.AppUserListViewModel.Name @Model.AppUserListViewModel.Surname</h5>
+                        <p class="card-text">
+                            <getirGorevAppUserId app-user-id="@Model.AppUserListViewModel.Id"></getirGorevAppUserId>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">@Model.AppUserListViewModel.Email</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

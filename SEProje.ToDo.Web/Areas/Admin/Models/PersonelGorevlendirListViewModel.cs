@@ -4,7 +4,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Models
 {
     public class PersonelGorevlendirListViewModel
     {
-        public AppUser AppUser { get; set; }
-        public Gorev Gorev { get; set; }
+        public AppUserListViewModel AppUserListViewModel { get; set; }
+        public GorevListViewModel GorevListViewModel { get; set; }
     }
 }

@@ -96,9 +96,39 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             var user = _userManager.Users.FirstOrDefault(x => x.Id == model.PersonelId);
             var gorev = _gorevService.GetirAclliyetIleId(model.GorevId);
 
+            AppUserListViewModel appUserListViewModel = new AppUserListViewModel
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Surname = user.Surname,
+                Picture = user.Picture,
+                Email = user.Email
+            };
 
+            GorevListViewModel gorevListViewModel = new GorevListViewModel
+            {
+                Id = gorev.Id,
+                Aciklama = gorev.Aciklama,
+                Aciliyet = gorev.Aciliyet,
+                Ad = gorev.Ad
+            };
 
-            return View();
+            PersonelGorevlendirListViewModel personelGorevlendirListViewModel = new PersonelGorevlendirListViewModel();
+            personelGorevlendirListViewModel.AppUserListViewModel = appUserListViewModel;
+            personelGorevlendirListViewModel.GorevListViewModel = gorevListViewModel;
+
+            return View(personelGorevlendirListViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult GorevlendirPersonelTamamla(PersonelGorevlendirViewModel model)
+        {
+            var guncellenecekGorev = _gorevService.GetirIdile(model.GorevId);
+            guncellenecekGorev.AppUserId = model.PersonelId;
+
+            _gorevService.Guncelle(guncellenecekGorev);
+
+            return RedirectToAction("Index");
         }
     }
 }
