@@ -11,6 +11,7 @@
     <link href="~/lib/bootswatch/bootstrap.min.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="~/lib/template-css/simple-sidebar.css" rel="stylesheet" />
+    <link href="~/lib/fontAwesome/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,16 +23,29 @@
             <div class="sidebar-heading">Admin Panel</div>
             <div class="list-group list-group-flush">
 
-                <a asp-area="Admin" asp-controller="Aciliyet" asp-action="Index" class="list-group-item list-group-item-action">Aciliyet İşlemleri</a>
+                <a asp-area="Admin" asp-controller="Aciliyet" asp-action="Index" class="list-group-item list-group-item-action">
+                    <i class="far fa-bell mr-2"></i> Aciliyet İşlemleri
+                </a>
 
-                <a asp-area="Admin" asp-controller="Gorev" asp-action="Index" class="list-group-item list-group-item-action">Görev İşlemleri</a>
+                <a asp-area="Admin" asp-controller="Gorev" asp-action="Index" class="list-group-item list-group-item-action">
+                    <i class="fas fa-tasks mr-2"></i> Görev İşlemleri
+                </a>
 
-                <a asp-area="Admin" asp-controller="IsEmri" asp-action="Index" class="list-group-item list-group-item-action">İş Emirleri</a>
+                <a asp-area="Admin" asp-controller="IsEmri" asp-action="Index" class="list-group-item list-group-item-action">
+                    <i class="far fa-edit mr-2"></i> İş Emirleri
+                </a>
 
-                <a href="#" class="list-group-item list-group-item-action">Overview</a>
-                <a href="#" class="list-group-item list-group-item-action">Events</a>
-                <a href="#" class="list-group-item list-group-item-action">Profile</a>
-                <a href="#" class="list-group-item list-group-item-action">Status</a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-chart-pie mr-2"></i> Grafikler
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="far fa-chart-bar mr-2"></i> İstatistikler
+                </a>
+                
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Çıkış Yap
+                </a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -79,6 +93,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/fontAwesome/js/all.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>$("#menu-toggle").click(function(e) {
       e.preventDefault();
