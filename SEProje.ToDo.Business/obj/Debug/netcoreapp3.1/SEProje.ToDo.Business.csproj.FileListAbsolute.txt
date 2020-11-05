@@ -8,7 +8,6 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\bin\Debug\netcoreapp3.1
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.csprojAssemblyReference.cache
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.AssemblyInfoInputs.cache
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.AssemblyInfo.cs
-C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.csproj.CoreCompileInputs.cache
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.csproj.CopyComplete
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.pdb
