@@ -9,6 +9,7 @@
       "SEProje.ToDo.Business/1.0.0": {
         "dependencies": {
           "EPPlus": "5.4.1",
+          "FastMember.NetCore": "1.1.0",
           "SEProje.ToDo.DataAccess": "1.0.0",
           "iTextSharp.LGPLv2.Core": "1.6.9"
         },
@@ -35,6 +36,17 @@
           "lib/netstandard2.1/EPPlus.dll": {
             "assemblyVersion": "5.4.1.0",
             "fileVersion": "5.4.1.0"
+          }
+        }
+      },
+      "FastMember.NetCore/1.1.0": {
+        "dependencies": {
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/FastMember.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1790,6 +1802,13 @@
       "sha512": "sha512-GsibZECChUEMkx05A1S19l+eNWf2+JczNCOzz9b7EaFZpInzTyJXyKPl2qpDrbFrkVpOlHRyNAijaUHIFH6+sA==",
       "path": "epplus/5.4.1",
       "hashPath": "epplus.5.4.1.nupkg.sha512"
+    },
+    "FastMember.NetCore/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-so8TQFqW/XFp2Ey7W2Td/tt8fSF8auxM+8dpj2pYuP4M3GRBm8OvEA8Dh6q+NzxWbde1YkvkCUAcXsys9ECvGQ==",
+      "path": "fastmember.netcore/1.1.0",
+      "hashPath": "fastmember.netcore.1.1.0.nupkg.sha512"
     },
     "iTextSharp.LGPLv2.Core/1.6.9": {
       "type": "package",

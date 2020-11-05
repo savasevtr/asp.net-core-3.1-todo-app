@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml.FormulaParsing.Excel.Functions;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Areas.Admin.Models;
@@ -17,11 +18,13 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
         private readonly IAppUserService _appUserService;
         private readonly IGorevService _gorevService;
         private readonly UserManager<AppUser> _userManager;
-        public IsEmriController(IAppUserService appUserService, IGorevService gorevService, UserManager<AppUser> userManager)
+        private readonly IDosyaService _dosyaService;
+        public IsEmriController(IAppUserService appUserService, IGorevService gorevService, UserManager<AppUser> userManager, IDosyaService dosyaService)
         {
             _appUserService = appUserService;
             _gorevService = gorevService;
             _userManager = userManager;
+            _dosyaService = dosyaService;
         }
 
         public IActionResult Index()
@@ -143,6 +146,28 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             gorevListAllViewModel.AppUser = gorev.AppUser;
 
             return View(gorevListAllViewModel);
+        }
+
+        public IActionResult GetirExcel(int id)
+        {
+            var raporlar = _gorevService.GetirRaporlarileId(id).Raporlar;
+
+            var fileContents = _dosyaService.AktarExcel(raporlar);
+            string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            string fileDownloadName = Guid.NewGuid() + ".xlsx";
+
+            return File(fileContents, contentType, fileDownloadName);
+        }
+
+        public IActionResult GetirPdf(int id)
+        {
+            var raporlar = _gorevService.GetirRaporlarileId(id).Raporlar;
+
+            var virtualPath = _dosyaService.AktarPdf(raporlar);
+            string fileDownloadName = Guid.NewGuid() + ".pdf";
+            string contentType = "application/pdf";
+
+            return File(virtualPath, contentType, fileDownloadName);
         }
     }
 }

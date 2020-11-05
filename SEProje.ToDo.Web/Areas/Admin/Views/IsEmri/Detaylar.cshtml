@@ -8,7 +8,13 @@
 
 @if (Model.Raporlar.Count > 0)
 {
-    <a href="" class="btn btn-outline-danger btn-sm my-3">Excelde Görüntüle</a>
+    <a asp-area="Admin" asp-controller="IsEmri" asp-action="GetirExcel" asp-route-id="@Model.Id" target="_blank" class="btn btn-outline-success btn-sm my-3">
+        Excel
+    </a>
+
+    <a asp-area="Admin" asp-controller="IsEmri" asp-action="GetirPdf" asp-route-id="@Model.Id" target="_blank" class="btn btn-outline-danger btn-sm my-3">
+        Pdf
+    </a>
 
     <table class="table table-bordered table-striped table-hover my-3">
         <thead>
@@ -25,10 +31,10 @@
         <tbody>
             @foreach (var item in Model.Raporlar)
             {
-            <tr>
-                <td>@item.Tanim</td>
-                <td>@item.Detay</td>
-            </tr>
+                <tr>
+                    <td>@item.Tanim</td>
+                    <td>@item.Detay</td>
+                </tr>
             }
         </tbody>
     </table>

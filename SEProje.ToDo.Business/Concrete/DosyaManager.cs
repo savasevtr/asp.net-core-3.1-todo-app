@@ -7,14 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Net.Http.Headers;
 
 namespace SEProje.ToDo.Business.Concrete
 {
-    public class DosyaManager : IDosyaManager
+    public class DosyaManager : IDosyaService
     {
         public byte[] AktarExcel<T>(List<T> entity) where T : class, new()
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             var excelPackage = new ExcelPackage();
             var excelBlank = excelPackage.Workbook.Worksheets.Add("Calisma1");
 

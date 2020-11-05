@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.4.1" />
+    <PackageReference Include="FastMember.NetCore" Version="1.1.0" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.6.9" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SEProje.ToDo.DataAccess\SEProje.ToDo.DataAccess.csproj" />
   </ItemGroup>
 
