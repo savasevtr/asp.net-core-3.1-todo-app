@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using OfficeOpenXml.FormulaParsing.Excel.Functions;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Areas.Admin.Models;

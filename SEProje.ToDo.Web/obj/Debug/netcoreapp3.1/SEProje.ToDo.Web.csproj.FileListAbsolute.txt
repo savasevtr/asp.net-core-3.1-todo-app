@@ -185,3 +185,6 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\runt
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profil\Index.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Wrapper\Default.cshtml.g.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Wrapper\Member.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\Profil\Index.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\_ViewImports.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\IsEmri\Index.cshtml.g.cs

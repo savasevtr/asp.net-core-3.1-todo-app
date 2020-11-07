@@ -2,8 +2,10 @@
 using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
 using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
 {
@@ -41,6 +43,20 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                     .Include(x => x.Raporlar)
                     .Include(x => x.AppUser)
                     .Where(x => !x.Durum)
+                    .OrderByDescending(x => x.OlusturmaTarihi)
+                    .ToList();
+            }
+        }
+
+        public List<Gorev> GetirTumTablolarla(Expression<Func<Gorev, bool>> filter)
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler
+                    .Include(x => x.Aciliyet)
+                    .Include(x => x.Raporlar)
+                    .Include(x => x.AppUser)
+                    .Where(filter)
                     .OrderByDescending(x => x.OlusturmaTarihi)
                     .ToList();
             }
