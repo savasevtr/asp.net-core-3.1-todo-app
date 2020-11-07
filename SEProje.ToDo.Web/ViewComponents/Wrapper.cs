@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Areas.Admin.Models;
 
-namespace SEProje.ToDo.Web.Areas.Admin.ViewComponents
+namespace SEProje.ToDo.Web.ViewComponents
 {
     public class Wrapper : ViewComponent
     {
@@ -27,7 +27,14 @@ namespace SEProje.ToDo.Web.Areas.Admin.ViewComponents
                 Email = user.Email
             };
 
-            return View(model);
+            var roles = _userManager.GetRolesAsync(user).Result;
+
+            if (roles.Contains("Admin"))
+            {
+                return View(model);
+            }
+
+            return View("Member", model);
         }
     }
 }
