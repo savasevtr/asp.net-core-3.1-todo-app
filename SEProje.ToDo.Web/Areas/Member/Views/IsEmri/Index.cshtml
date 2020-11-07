@@ -22,17 +22,17 @@
             <p class="text-right">
                 @if (gorev.Raporlar.Count > 0)
                 {
-                    <a class="btn btn-light btn-sm" data-toggle="collapse" href="#rapor-@index" role="button" aria-expanded="false" aria-controls="raportlar">
+                    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#rapor-@index" role="button" aria-expanded="false" aria-controls="raportlar">
                         Raporlara Git <span class="badge badge-dark"> @gorev.Raporlar.Count</span>
                     </a>
                 }
 
-                <a href="#" class="btn btn-outline-info btn-sm">
-                    Rapor Yaz
+                <a asp-area="Member" asp-controller="IsEmri" asp-action="EkleRapor" asp-route-id="@gorev.Id" class="btn btn-outline-info btn-sm">
+                    <i class="fas fa-plus-circle mr-2"></i>Rapor Yaz
                 </a>
 
                 <a href="#" class="btn btn-outline-success btn-sm">
-                    Tamamlandı Olarak İşaretle
+                    <i class="fas fa-check mr-2"></i>Tamamlandı Olarak İşaretle
                 </a>
             </p>
 
@@ -52,7 +52,7 @@
                                 <td>@rapor.Tanim</td>
                                 <td>@rapor.Detay</td>
                                 <td class="text-center">
-                                    <a href="#" class="btn btn-outline-primary btn-sm">Düzenle</a>
+                                    <a asp-area="Member" asp-controller="IsEmri" asp-action="DuzenleRapor" asp-route-id="@rapor.Id" class="btn btn-outline-primary btn-sm">Düzenle</a>
                                 </td>
                             </tr>
                         }
