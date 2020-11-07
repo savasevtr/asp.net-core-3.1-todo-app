@@ -1,10 +1,7 @@
 ﻿using SEProje.ToDo.Business.Interfaces;
-using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SEProje.ToDo.Business.Concrete
 {
@@ -15,6 +12,11 @@ namespace SEProje.ToDo.Business.Concrete
         public RaporManager(IRaporDal raporDal)
         {
             _raporDal = raporDal;
+        }
+
+        public Rapor GetirGorevileId(int id)
+        {
+            return _raporDal.GetirGorevileId(id);
         }
 
         public List<Rapor> GetirHepsi()

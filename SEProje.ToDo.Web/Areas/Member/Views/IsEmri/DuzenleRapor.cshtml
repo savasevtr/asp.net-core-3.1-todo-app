@@ -1,10 +1,10 @@
-﻿@model RaporAddViewModel
+﻿@model RaporEditViewModel
 @{
-    ViewData["Title"] = "Rapor Ekle";
+    ViewData["Title"] = "Rapor Düzenle";
     Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
 }
 
-<h4 class="mt-4">Rapor Ekle</h4>
+<h4 class="mt-4">Rapor Düzenle</h4>
 
 <div class="card text-white bg-info my-3 w-50">
     <div class="card-header">Görev Bilgileri</div>
@@ -15,7 +15,9 @@
     </div>
 </div>
 
-<form asp-area="Member" asp-controller="IsEmri" asp-action="EkleRapor" method="post" class="w-50 my-2 p-3 shadow">
+<form asp-area="Member" asp-controller="IsEmri" asp-action="DuzenleRapor" method="post" class="w-50 my-2 p-3 shadow">
+
+    <input type="hidden" asp-for="Id" />
 
     <input type="hidden" asp-for="GorevId" />
 
@@ -35,7 +37,7 @@
         <i class="fas fa-chevron-circle-left mr-2"></i>Vazgeç
     </a>
 
-    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-check mr-2"></i>Kaydet</button>
+    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-check mr-2"></i>Güncelle</button>
 
 </form>
 

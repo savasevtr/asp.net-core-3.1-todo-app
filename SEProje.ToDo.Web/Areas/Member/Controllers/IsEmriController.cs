@@ -54,17 +54,68 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
 
         public IActionResult EkleRapor(int id)
         {
+            var gorev = _gorevService.GetirAclliyetIleId(id);
+
             RaporAddViewModel model = new RaporAddViewModel
             {
-                GorevId = id
+                GorevId = id,
+                Gorev = gorev
             };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult EkleRapor(RaporAddViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _raporService.Kaydet(new Rapor
+                {
+                    GorevId = model.GorevId,
+                    Tanim = model.Tanim,
+                    Detay = model.Tanim
+                });
+
+                return RedirectToAction("Index");
+            }
 
             return View(model);
         }
 
         public IActionResult DuzenleRapor(int id)
         {
-            return View();
+            var rapor = _raporService.GetirGorevileId(id);
+
+            RaporEditViewModel model = new RaporEditViewModel
+            {
+                Id = rapor.Id,
+                GorevId = rapor.GorevId,
+                Gorev = rapor.Gorev,
+                Tanim = rapor.Tanim,
+                Detay = rapor.Detay
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult DuzenleRapor(RaporEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var rapor = _raporService.GetirIdile(model.Id);
+
+                // rapor.GorevId = model.GorevId;
+                rapor.Tanim = model.Tanim;
+                rapor.Detay = model.Detay;
+
+                _raporService.Guncelle(rapor);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
     }
 }
