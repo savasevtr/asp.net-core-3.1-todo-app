@@ -68,5 +68,20 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
 
             return context.Gorevler.Include(x => x.Raporlar).Include(y => y.AppUser).Where(z => z.Id == id).FirstOrDefault();
         }
+
+        public List<Gorev> GetirTumTablolarlaTamamlanan(out int pageCount, int userId ,int currentPage = 1)
+        {
+            using var context = new TodoContext();
+
+            var returnValue = context.Gorevler.Include(x => x.Aciliyet)
+                .Include(x => x.Raporlar)
+                .Include(x => x.AppUser)
+                .Where(x => x.AppUserId == userId && x.Durum)
+                .OrderByDescending(x => x.OlusturmaTarihi);
+
+            pageCount = (int)Math.Ceiling((double)returnValue.Count() / 3);
+
+            return returnValue.Skip((currentPage - 1) * 3).Take(3).ToList();
+        }
     }
 }

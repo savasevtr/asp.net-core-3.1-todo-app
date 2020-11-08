@@ -10,6 +10,7 @@ namespace SEProje.ToDo.Business.Interfaces
         List<Gorev> GetirAciliyetIleTamamlanmayan();
         List<Gorev> GetirTumTablolarla();
         List<Gorev> GetirTumTablolarla(Expression<Func<Gorev, bool>> filter);
+        List<Gorev> GetirTumTablolarlaTamamlanan(out int pageCount, int userId, int currentPage = 1);
         Gorev GetirAclliyetIleId(int id);
         List<Gorev> GetirileAppUserId(int appUserId);
         Gorev GetirRaporlarileId(int id);

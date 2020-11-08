@@ -56,6 +56,11 @@ namespace SEProje.ToDo.Business.Concrete
             return _gorevDal.GetirTumTablolarla(filter);
         }
 
+        public List<Gorev> GetirTumTablolarlaTamamlanan(out int pageCount, int userId, int currentPage = 1)
+        {
+            return _gorevDal.GetirTumTablolarlaTamamlanan(out pageCount, userId, currentPage);
+        }
+
         public void Guncelle(Gorev tablo)
         {
             _gorevDal.Guncelle(tablo);

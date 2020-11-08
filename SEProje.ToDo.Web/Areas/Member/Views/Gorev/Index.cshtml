@@ -1,0 +1,66 @@
+﻿@model List<GorevListAllViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+    int index = 0;
+}
+
+<h4 class="mt-4">Gelen İş Emirleri</h4>
+
+@foreach (var gorev in Model)
+{
+    index++;
+
+    <div class="card my-4">
+        <h5 class="card-header">@gorev.Ad</h5>
+        <div class="card-body">
+            <h5 class="card-title">
+                <span class="text-danger">Aciliyet Durumu : </span> @gorev.Aciliyet.Tanim
+            </h5>
+            <p class="card-text">@gorev.Aciklama</p>
+
+            <p class="text-right">
+                @if (gorev.Raporlar.Count > 0)
+                {
+                    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#rapor-@index" role="button" aria-expanded="false" aria-controls="raportlar">
+                        Raporlara Git <span class="badge badge-dark"> @gorev.Raporlar.Count</span>
+                    </a>
+                }
+            </p>
+
+            <div class="collapse" id="rapor-@index">
+                <table class="table table-sm table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Tanım</th>
+                            <th>Detay</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var rapor in gorev.Raporlar)
+                        {
+                            <tr>
+                                <td>@rapor.Tanim</td>
+                                <td>@rapor.Detay</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+}
+
+<nav class="page navigation float-right">
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.pageCount; i++)
+        {
+            <li class="page-item @(ViewBag.currentpage == i ? "active" : "")">
+                <a class="page-link" asp-area="Member" asp-controller="Gorev" asp-action="Index" asp-route-page="@i">
+                    @i
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
