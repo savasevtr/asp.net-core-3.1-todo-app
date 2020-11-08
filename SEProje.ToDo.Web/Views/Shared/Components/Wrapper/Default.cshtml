@@ -27,6 +27,15 @@
             <i class="far fa-chart-bar mr-2"></i> İstatistikler
         </a>
 
+        <a asp-area="Admin" asp-controller="Bildirim" asp-action="Index" class="list-group-item list-group-item-action">
+            <i class="far fa-bell mr-2"></i> Bildirimler
+
+            @if (ViewBag.bildirimSayisi > 0)
+            {
+                <span class="badge badge-success float-right mt-1">@ViewBag.bildirimSayisi</span>
+            }
+        </a>
+
         <a asp-area="Admin" asp-controller="Profil" asp-action="Index" class="list-group-item list-group-item-action">
             <i class="far fa-chart-bar mr-2"></i> Profilim
         </a>
