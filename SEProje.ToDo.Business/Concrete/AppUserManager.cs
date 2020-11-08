@@ -23,5 +23,15 @@ namespace SEProje.ToDo.Business.Concrete
         {
             return _appUserDal.GetirAdminOlmayanlar(out pageCount, search, currentPage);
         }
+
+        public List<DualHelper> GetirEnCokGorevdeCalisanPersoneller()
+        {
+            return _appUserDal.GetirEnCokGorevdeCalisanPersoneller();
+        }
+
+        public List<DualHelper> GetirEnCokGorevTamamlamisPersoneller()
+        {
+            return _appUserDal.GetirEnCokGorevTamamlamisPersoneller();
+        }
     }
 }

@@ -7,5 +7,7 @@ namespace SEProje.ToDo.Business.Interfaces
     {
         List<AppUser> GetirAdminOlmayanlar();
         List<AppUser> GetirAdminOlmayanlar(out int pageCount, string search, int currentPage = 1);
+        List<DualHelper> GetirEnCokGorevTamamlamisPersoneller();
+        List<DualHelper> GetirEnCokGorevdeCalisanPersoneller();
     }
 }

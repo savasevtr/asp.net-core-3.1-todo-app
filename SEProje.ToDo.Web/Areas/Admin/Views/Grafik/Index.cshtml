@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Grafikler";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="my-4">Grafikler</h4>
+
+<div class="row">
+    <div class="col-md-6">
+        <div id="piechart" style="width: 100%; height: auto;"></div>
+    </div>
+    <div class="col-md-6">
+        <div id="piechart_3d" style="width: 100%; height: auto;"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawChart2);
+
+        function drawChart() {
+
+            let enCokGorevTamamlayan = [['Personel Adı', 'Görev Sayısı']];
+
+            $.ajax({
+                type: "GET",
+                url: "/Admin/Grafik/EnCokGorevTamamlayan",
+                async: false,
+                success: function (data) {
+                    let result = jQuery.parseJSON(data);
+                    $.each(result, function (index, value) {
+                        enCokGorevTamamlayan.push([value.Isim, value.GorevSayisi]);
+                    });
+                }
+            });
+
+            var data = google.visualization.arrayToDataTable(enCokGorevTamamlayan);
+
+            var options = {
+                title: 'En Çok Görev Tamamlayan 5 Personel'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+
+        function drawChart2() {
+            let enCokGorevdeCalisan = [['Personel Adı', 'Görev Sayısı']];
+
+            $.ajax({
+                type: "GET",
+                url: "/Admin/Grafik/EnCokGorevdeCalisan",
+                async: false,
+                success: function (data) {
+                    let result = jQuery.parseJSON(data);
+                    $.each(result, function (index, value) {
+                        enCokGorevdeCalisan.push([value.Isim, value.GorevSayisi]);
+                    });
+                }
+            });
+
+            var data = google.visualization.arrayToDataTable(enCokGorevdeCalisan);
+
+            var options = {
+                title: 'Şuan Görevde Çalışan Personeller',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+
+    </script>
+}

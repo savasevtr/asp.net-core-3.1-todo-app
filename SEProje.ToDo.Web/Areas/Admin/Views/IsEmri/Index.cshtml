@@ -45,7 +45,15 @@
                 }
             </td>
             <td class="text-center">
-                <a asp-area="Admin" asp-action="Detaylar" asp-controller="IsEmri" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Detaylar</a>
+                @if (item.AppUser != null)
+                {
+                    <a asp-area="Admin" asp-action="Detaylar" asp-controller="IsEmri" asp-route-id="@item.Id" class="btn btn-sm btn-info my-2">Detaylar</a>
+                }
+                else
+                {
+                    <span class="badge badge-danger">Henüz personel atanmadı</span>
+                }
+
             </td>
         </tr>
             }

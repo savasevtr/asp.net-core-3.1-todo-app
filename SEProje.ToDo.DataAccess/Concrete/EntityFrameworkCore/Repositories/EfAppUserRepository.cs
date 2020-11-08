@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Internal;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
 using SEProje.ToDo.DataAccess.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
@@ -87,6 +88,42 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                 result = result.Skip((currentPage - 1) * 3).Take(3);
 
                 return result.ToList();
+            }
+        }
+
+        public List<DualHelper> GetirEnCokGorevTamamlamisPersoneller()
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler
+                     .Include(x => x.AppUser)
+                     .Where(x => x.Durum)
+                     .GroupBy(x => x.AppUser.UserName)
+                     .OrderByDescending(x => x.Count())
+                     .Take(5)
+                     .Select(x => new DualHelper
+                     {
+                         Isim = x.Key,
+                         GorevSayisi = x.Count()
+                     }).ToList();
+            }
+        }
+
+        public List<DualHelper> GetirEnCokGorevdeCalisanPersoneller()
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler
+                     .Include(x => x.AppUser)
+                     .Where(x => !x.Durum && x.AppUserId != null)
+                     .GroupBy(x => x.AppUser.UserName)
+                     .OrderByDescending(x => x.Count())
+                     .Take(5)
+                     .Select(x => new DualHelper
+                     {
+                         Isim = x.Key,
+                         GorevSayisi = x.Count()
+                     }).ToList();
             }
         }
     }
