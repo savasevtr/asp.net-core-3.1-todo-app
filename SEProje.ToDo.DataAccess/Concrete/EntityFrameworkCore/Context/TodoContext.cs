@@ -21,6 +21,7 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context
             modelBuilder.ApplyConfiguration(new AciliyetMap());
             modelBuilder.ApplyConfiguration(new RaporMap());
             modelBuilder.ApplyConfiguration(new AppUserMap());
+            modelBuilder.ApplyConfiguration(new BildirimMap());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -28,5 +29,6 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context
         public DbSet<Gorev> Gorevler { get; set; }
         public DbSet<Aciliyet> Aciliyetler { get; set; }
         public DbSet<Rapor> Raporlar { get; set; }
+        public DbSet<Bildirim> Bildirimler { get; set; }
     }
 }
