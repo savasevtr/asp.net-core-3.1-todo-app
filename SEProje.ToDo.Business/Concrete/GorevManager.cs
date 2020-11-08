@@ -26,6 +26,16 @@ namespace SEProje.ToDo.Business.Concrete
             return _gorevDal.GetirAciliyetileId(id);
         }
 
+        public int GetirGorevSayisiAtanmayiBekleyen()
+        {
+            return _gorevDal.GetirGorevSayisiAtanmayiBekleyen();
+        }
+
+        public int GetirGorevSayisiTamamlanan()
+        {
+            return _gorevDal.GetirGorevSayisiTamamlanan();
+        }
+
         public int GetirGorevSayisiTamamlananileAppUserId(int id)
         {
             return _gorevDal.GetirGorevSayisiTamamlananileAppUserId(id);

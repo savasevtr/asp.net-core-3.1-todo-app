@@ -99,5 +99,21 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                 return context.Gorevler.Count(x => x.AppUserId == id && !x.Durum);
             }
         }
+
+        public int GetirGorevSayisiAtanmayiBekleyen()
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler.Count(x => x.AppUserId == null && !x.Durum);
+            }
+        }
+
+        public int GetirGorevSayisiTamamlanan()
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler.Count(x => x.Durum);
+            }
+        }
     }
 }

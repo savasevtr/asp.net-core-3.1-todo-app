@@ -16,6 +16,14 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
             }
         }
 
+        public int GetirRaporSayisi()
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Raporlar.Count();
+            }
+        }
+
         public int GetirRaporSayisiileAppUserId(int id)
         {
             using (var context = new TodoContext())
