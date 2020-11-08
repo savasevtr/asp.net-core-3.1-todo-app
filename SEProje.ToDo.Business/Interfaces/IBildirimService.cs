@@ -6,5 +6,6 @@ namespace SEProje.ToDo.Business.Interfaces
     public interface IBildirimService : IGenericService<Bildirim>
     {
         List<Bildirim> GetirOkunmayanlar(int AppUserId);
+        int GetirOkunmayanSayisiileAppUserId(int AppUserId);
     }
 }

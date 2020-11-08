@@ -14,5 +14,7 @@ namespace SEProje.ToDo.Business.Interfaces
         Gorev GetirAclliyetIleId(int id);
         List<Gorev> GetirileAppUserId(int appUserId);
         Gorev GetirRaporlarileId(int id);
+        int GetirGorevSayisiTamamlananileAppUserId(int id);
+        int GetirGorevSayisiTamamlanmayanileAppUserId(int id);
     }
 }

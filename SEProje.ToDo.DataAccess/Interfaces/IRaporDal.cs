@@ -5,5 +5,6 @@ namespace SEProje.ToDo.DataAccess.Interfaces
     public interface IRaporDal : IGenericDal<Rapor>
     {
         Rapor GetirGorevileId(int id);
+        int GetirRaporSayisiileAppUserId(int id);
     }
 }

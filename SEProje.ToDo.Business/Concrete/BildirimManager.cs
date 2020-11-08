@@ -29,6 +29,11 @@ namespace SEProje.ToDo.Business.Concrete
             return _bildirimDal.GetirOkunmayanlar(AppUserId);
         }
 
+        public int GetirOkunmayanSayisiileAppUserId(int AppUserId)
+        {
+            return _bildirimDal.GetirOkunmayanSayisiileAppUserId(AppUserId);
+        }
+
         public void Guncelle(Bildirim tablo)
         {
             _bildirimDal.Guncelle(tablo);

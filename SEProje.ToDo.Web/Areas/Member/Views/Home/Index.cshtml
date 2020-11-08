@@ -1,8 +1,41 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
 }
 
-<h4 class="mt-4">Member Index</h4>
+<h4 class="my-4">Başlangıç</h4>
 
+<div class="row">
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Rapor Sayısı:</h5>
+                <p class="card-text lead">@ViewBag.raporSayisi</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Tamamlanan Görevler:</h5>
+                <p class="card-text lead">@ViewBag.tamamlananGorevSayisi</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Okunmamış Bildirimler</h5>
+                <p class="card-text lead">@ViewBag.okunmayanBildirimSayisi</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Devam Eden Görevler:</h5>
+                <p class="card-text lead">@ViewBag.tamamlanmayanGorevSayisi</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,5 +6,6 @@ namespace SEProje.ToDo.DataAccess.Interfaces
     public interface IBildirimDal : IGenericDal<Bildirim>
     {
         List<Bildirim> GetirOkunmayanlar(int AppUserId);
+        int GetirOkunmayanSayisiileAppUserId(int AppUserId);
     }
 }

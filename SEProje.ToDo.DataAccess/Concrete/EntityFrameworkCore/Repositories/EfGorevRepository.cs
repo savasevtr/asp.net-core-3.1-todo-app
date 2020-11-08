@@ -83,5 +83,21 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
 
             return returnValue.Skip((currentPage - 1) * 3).Take(3).ToList();
         }
+
+        public int GetirGorevSayisiTamamlananileAppUserId(int id)
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler.Count(x => x.AppUserId == id && x.Durum);
+            }
+        }
+
+        public int GetirGorevSayisiTamamlanmayanileAppUserId(int id)
+        {
+            using (var context = new TodoContext())
+            {
+                return context.Gorevler.Count(x => x.AppUserId == id && !x.Durum);
+            }
+        }
     }
 }

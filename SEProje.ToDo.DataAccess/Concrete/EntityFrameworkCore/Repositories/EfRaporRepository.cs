@@ -15,5 +15,15 @@ namespace SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
                 return context.Raporlar.Include(x => x.Gorev).ThenInclude(x => x.Aciliyet).Where(x => x.Id == id).FirstOrDefault();
             }
         }
+
+        public int GetirRaporSayisiileAppUserId(int id)
+        {
+            using (var context = new TodoContext())
+            {
+                var result = context.Gorevler.Include(x => x.Raporlar).Where(x => x.AppUserId == id);
+
+                return result.SelectMany(x => x.Raporlar).Count();
+            }
+        }
     }
 }

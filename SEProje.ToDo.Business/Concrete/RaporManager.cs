@@ -29,6 +29,11 @@ namespace SEProje.ToDo.Business.Concrete
             return _raporDal.GetirIdile(id);
         }
 
+        public int GetirRaporSayisiileAppUserId(int id)
+        {
+            return _raporDal.GetirRaporSayisiileAppUserId(id);
+        }
+
         public void Guncelle(Rapor tablo)
         {
             _raporDal.Guncelle(tablo);
