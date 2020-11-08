@@ -1,7 +1,7 @@
 ﻿@model List<BildirimListViewModel>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
     int index = 0;
 }
 
@@ -28,7 +28,7 @@
                     <td>@item.Aciklama</td>
 
                     <td class="text-center">
-                        <form method="post" asp-area="Admin" asp-controller="Bildirim" asp-action="Index" class="my-2">
+                        <form method="post" asp-area="Member" asp-controller="Bildirim" asp-action="Index" class="my-2">
 
                             <input type="hidden" name="id" value="@item.Id" />
 
@@ -43,7 +43,7 @@
 }
 else
 {
-<div class="alert alert-info">
-    <strong>Herhangi bir bildiriminiz bulunmamaktadır!</strong>
-</div>
+    <div class="alert alert-info">
+        <strong>Herhangi bir bildiriminiz bulunmamaktadır!</strong>
+    </div>
 }
