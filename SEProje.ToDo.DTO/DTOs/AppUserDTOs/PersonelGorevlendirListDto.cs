@@ -1,8 +1,10 @@
-﻿namespace SEProje.ToDo.DTO.DTOs.AppUserDTOs
+﻿using SEProje.ToDo.DTO.DTOs.GorevDTOs;
+
+namespace SEProje.ToDo.DTO.DTOs.AppUserDTOs
 {
     public class PersonelGorevlendirListDto
     {
-        //public AppUserListViewModel AppUserListViewModel { get; set; }
-        //public GorevListViewModel GorevListViewModel { get; set; }
+        public AppUserListDto AppUser { get; set; }
+        public GorevListDto Gorev { get; set; }
     }
 }
