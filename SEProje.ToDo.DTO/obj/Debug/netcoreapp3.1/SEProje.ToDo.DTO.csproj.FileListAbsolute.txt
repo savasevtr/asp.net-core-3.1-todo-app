@@ -1,0 +1,9 @@
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\bin\Debug\netcoreapp3.1\SEProje.ToDo.DTO.deps.json
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\bin\Debug\netcoreapp3.1\SEProje.ToDo.DTO.dll
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\bin\Debug\netcoreapp3.1\SEProje.ToDo.DTO.pdb
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\obj\Debug\netcoreapp3.1\SEProje.ToDo.DTO.csprojAssemblyReference.cache
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\obj\Debug\netcoreapp3.1\SEProje.ToDo.DTO.AssemblyInfoInputs.cache
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\obj\Debug\netcoreapp3.1\SEProje.ToDo.DTO.AssemblyInfo.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\obj\Debug\netcoreapp3.1\SEProje.ToDo.DTO.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\obj\Debug\netcoreapp3.1\SEProje.ToDo.DTO.dll
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.DTO\obj\Debug\netcoreapp3.1\SEProje.ToDo.DTO.pdb

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SEProje.ToDo.DTO/1.0.0": {
+        "runtime": {
+          "SEProje.ToDo.DTO.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SEProje.ToDo.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
