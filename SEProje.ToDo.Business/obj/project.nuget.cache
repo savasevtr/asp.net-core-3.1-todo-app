@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "3eTa306QH1HIWebcGY70GViXs6/YhRzvyCMcq1l9SMSfGDEsqFTDylLMm2+rv5h+a1A4dNOYALAd0mUleWvCig==",
+  "dgSpecHash": "/Q4d/sI5dHHYE3ZFcJ6hxhcoO7/rK76wRVr1sJl0zGsogFSWn26qlz2PwqiOt2L+zcUvzBUbpf5TisBxDfQF9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\SE\\source\\repos\\UdemyToDo\\SEProje.ToDo.Business\\SEProje.ToDo.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SE\\.nuget\\packages\\epplus\\5.4.1\\epplus.5.4.1.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\fastmember.netcore\\1.1.0\\fastmember.netcore.1.1.0.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.3.0\\fluentvalidation.dependencyinjectionextensions.9.3.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\itextsharp.lgplv2.core\\1.6.9\\itextsharp.lgplv2.core.1.6.9.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

@@ -11,4 +11,3 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.csproj.CopyComplete
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.pdb
-C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.csproj.CoreCompileInputs.cache
