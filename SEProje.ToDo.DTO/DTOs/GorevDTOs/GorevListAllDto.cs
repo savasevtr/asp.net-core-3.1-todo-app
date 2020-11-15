@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace SEProje.ToDo.Web.Areas.Admin.Models
+namespace SEProje.ToDo.DTO.DTOs.GorevDTOs
 {
-    public class GorevListAllViewModel
+    public class GorevListAllDto
     {
         public int Id { get; set; }
         public string Ad { get; set; }

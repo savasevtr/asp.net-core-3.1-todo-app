@@ -1,4 +1,4 @@
-﻿@model PersonelGorevlendirListViewModel
+﻿@model PersonelGorevlendirListDto
 @{
     ViewData["Title"] = "GorevlendirPersonel";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -9,12 +9,12 @@
 <div class="row">
     <div class="col-md-12">
         <form asp-area="Admin" asp-controller="IsEmri" asp-action="GorevlendirPersonelTamamla" method="post">
-            <input type="hidden" name="PersonelId" value="@Model.AppUserListViewModel.Id" />
-            <input type="hidden" name="GorevId" value="@Model.GorevListViewModel.Id" />
+            <input type="hidden" name="PersonelId" value="@Model.AppUser.Id" />
+            <input type="hidden" name="GorevId" value="@Model.Gorev.Id" />
             <div class="alert alert-info">
                 <p class="lead">Aşağıdaki göreve ilgili personel atanacaktır. Bu işlemi gerçekleştirmek istediğinizden emin misiniz?</p>
             </div>
-            <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.GorevListViewModel.Id" class="btn btn-light">Vazgeç</a>
+            <a asp-area="Admin" asp-controller="IsEmri" asp-action="PersonelAta" asp-route-id="@Model.Gorev.Id" class="btn btn-light">Vazgeç</a>
             <button type="submit" class="btn btn-outline-success">Evet</button>
         </form>
     </div>
@@ -27,12 +27,12 @@
                 <h4 class="lead">Görev Bilgileri</h4>
             </div>
             <div class="card-body">
-                <h5 class="card-title">@Model.GorevListViewModel.Ad</h5>
+                <h5 class="card-title">@Model.Gorev.Ad</h5>
                 <p class="card-text">
-                    @Model.GorevListViewModel.Aciklama
+                    @Model.Gorev.Aciklama
                 </p>
                 <p class="card-text">
-                    <strong>Aciliyet Durumu: </strong> <span class="badge badge-primary">@Model.GorevListViewModel.Aciliyet.Tanim</span>
+                    <strong>Aciliyet Durumu: </strong> <span class="badge badge-primary">@Model.Gorev.Aciliyet.Tanim</span>
                 </p>
             </div>
         </div>
@@ -44,16 +44,16 @@
             </div>
             <div class="row no-gutters">
                 <div class="col-md-4 p-4">
-                    <img src="~/img/@Model.AppUserListViewModel.Picture" class="card-img img-thumbnail shadow p-4" alt="@Model.AppUserListViewModel.Name" />
+                    <img src="~/img/@Model.AppUser.Picture" class="card-img img-thumbnail shadow p-4" alt="@Model.AppUser.Name" />
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">@Model.AppUserListViewModel.Name @Model.AppUserListViewModel.Surname</h5>
+                        <h5 class="card-title">@Model.AppUser.Name @Model.AppUser.Surname</h5>
                         <p class="card-text">
-                            <getirGorevAppUserId app-user-id="@Model.AppUserListViewModel.Id"></getirGorevAppUserId>
+                            <getirGorevAppUserId app-user-id="@Model.AppUser.Id"></getirGorevAppUserId>
                         </p>
                         <p class="card-text">
-                            <small class="text-muted">@Model.AppUserListViewModel.Email</small>
+                            <small class="text-muted">@Model.AppUser.Email</small>
                         </p>
                     </div>
                 </div>
