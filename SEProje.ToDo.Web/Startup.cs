@@ -1,3 +1,6 @@
+using AutoMapper;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -5,9 +8,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SEProje.ToDo.Business.Concrete;
 using SEProje.ToDo.Business.Interfaces;
+using SEProje.ToDo.Business.ValidationRules.FluentValidation;
 using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
 using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using SEProje.ToDo.DataAccess.Interfaces;
+using SEProje.ToDo.DTO.DTOs.AciliyetDTOs;
+using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
+using SEProje.ToDo.DTO.DTOs.GorevDTOs;
+using SEProje.ToDo.DTO.DTOs.RaporDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using System;
 
@@ -52,7 +60,18 @@ namespace SEProje.ToDo.Web
                 opt.LoginPath = "/Home/Index";
             });
 
-            services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddTransient<IValidator<AciliyetAddDto>, AciliyetAddValidator>();
+            services.AddTransient<IValidator<AciliyetUpdateDto>, AciliyetUpdateValidator>();
+            services.AddTransient<IValidator<AppUserAddDto>, AppUserAddValidator>();
+            services.AddTransient<IValidator<AppUserSignInDto>, AppUserSignInValidator>();
+            services.AddTransient<IValidator<GorevAddDto>, GorevAddValidator>();
+            services.AddTransient<IValidator<GorevUpdateDto>, GorevUpdateValidator>();
+            services.AddTransient<IValidator<RaporAddDto>, RaporAddValidator>();
+            services.AddTransient<IValidator<RaporUpdateDto>, RaporUpdateValidator>();
+
+            services.AddControllersWithViews().AddFluentValidation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
