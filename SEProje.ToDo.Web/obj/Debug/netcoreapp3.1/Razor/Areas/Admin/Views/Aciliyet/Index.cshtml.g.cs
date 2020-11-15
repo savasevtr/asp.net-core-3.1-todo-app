@@ -26,8 +26,15 @@ using SEProje.ToDo.DTO.DTOs.AciliyetDTOs;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2368f98fadd1a21d80f2dc62c0137fcb493280d6", @"/Areas/Admin/Views/Aciliyet/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"637ed6cb10dd3b8b28e6c472c5df11b145194631", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"058fbb7f95d230aa5fd99e93c2b419acd2bf78c0", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Aciliyet_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<AciliyetListDto>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Admin", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -70,7 +77,7 @@ using SEProje.ToDo.DTO.DTOs.AciliyetDTOs;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h4 class=\"mt-4\">Aciliyet Listesi</h4>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2368f98fadd1a21d80f2dc62c0137fcb493280d65502", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2368f98fadd1a21d80f2dc62c0137fcb493280d65715", async() => {
                 WriteLiteral("Yeni Aciliyet Ekle");
             }
             );
@@ -117,7 +124,7 @@ using SEProje.ToDo.DTO.DTOs.AciliyetDTOs;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                    <td class=\"text-center\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2368f98fadd1a21d80f2dc62c0137fcb493280d68284", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2368f98fadd1a21d80f2dc62c0137fcb493280d68497", async() => {
                 WriteLiteral("Düzenle");
             }
             );

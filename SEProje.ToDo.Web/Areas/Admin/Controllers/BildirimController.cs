@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
+using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 using SEProje.ToDo.Entities.Concrete;
-using SEProje.ToDo.Web.Areas.Admin.Models;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
@@ -15,31 +16,20 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
     {
         private readonly IBildirimService _bildirimService;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IMapper _mapper;
 
-        public BildirimController(IBildirimService bildirimService, UserManager<AppUser> userManager)
+        public BildirimController(IBildirimService bildirimService, UserManager<AppUser> userManager, IMapper mapper)
         {
             _bildirimService = bildirimService;
             _userManager = userManager;
+            _mapper = mapper;
         }
 
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
 
-            var bildirimler = _bildirimService.GetirOkunmayanlar(user.Id);
-
-            List<BildirimListViewModel> models = new List<BildirimListViewModel>();
-
-            foreach (var item in bildirimler)
-            {
-                BildirimListViewModel model = new BildirimListViewModel
-                {
-                    Id = item.Id,
-                    Aciklama = item.Aciklama
-                };
-
-                models.Add(model);
-            }
+            var models = _mapper.Map<List<BildirimListDto>>(_bildirimService.GetirOkunmayanlar(user.Id));
 
             return View(models);
         }
