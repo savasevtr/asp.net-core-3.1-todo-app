@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEProje.ToDo.Entities.Concrete;
+using System;
 
 namespace SEProje.ToDo.DTO.DTOs.GorevDTOs
 {
@@ -11,6 +12,6 @@ namespace SEProje.ToDo.DTO.DTOs.GorevDTOs
         public DateTime OlusturmaTarihi { get; set; }
 
         public int AciliyetId { get; set; }
-        //public Aciliyet Aciliyet { get; set; }
+        public Aciliyet Aciliyet { get; set; }
     }
 }

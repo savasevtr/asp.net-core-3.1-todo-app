@@ -184,7 +184,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\SE\\source\\repos\\UdemyToDo\\SEProje.ToDo.Entities\\SEProje.ToDo.Entities.csproj": {
+                "projectPath": "C:\\Users\\SE\\source\\repos\\UdemyToDo\\SEProje.ToDo.Entities\\SEProje.ToDo.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

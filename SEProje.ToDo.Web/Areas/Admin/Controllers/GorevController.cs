@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SEProje.ToDo.Business.Interfaces;
+using SEProje.ToDo.DTO.DTOs.GorevDTOs;
 using SEProje.ToDo.Entities.Concrete;
-using SEProje.ToDo.Web.Areas.Admin.Models;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
@@ -14,34 +15,18 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
     {
         private readonly IGorevService _gorevService;
         private readonly IAciliyetService _aciliyetService;
+        private readonly IMapper _mapper;
 
-        public GorevController(IGorevService gorevService, IAciliyetService aciliyetService)
+        public GorevController(IGorevService gorevService, IAciliyetService aciliyetService, IMapper mapper)
         {
             _gorevService = gorevService;
             _aciliyetService = aciliyetService;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            List<Gorev> gorevler = _gorevService.GetirAciliyetIleTamamlanmayan();
-
-            List<GorevListViewModel> models = new List<GorevListViewModel>();
-
-            foreach (var item in gorevler)
-            {
-                GorevListViewModel model = new GorevListViewModel
-                {
-                    Id = item.Id,
-                    Ad = item.Ad,
-                    Aciklama = item.Aciklama,
-                    Durum = item.Durum,
-                    OlusturmaTarihi = item.OlusturmaTarihi,
-                    AciliyetId = item.AciliyetId,
-                    Aciliyet = item.Aciliyet
-                };
-
-                models.Add(model);
-            }
+            var models = _mapper.Map<List<GorevListDto>>(_gorevService.GetirAciliyetIleTamamlanmayan());
 
             return View(models);
         }
@@ -50,11 +35,11 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
         {
             ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim");
 
-            return View(new GorevAddViewModel());
+            return View(new GorevAddDto());
         }
 
         [HttpPost]
-        public IActionResult GorevEkle(GorevAddViewModel model)
+        public IActionResult GorevEkle(GorevAddDto model)
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +53,8 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim");
+
             return View(model);
         }
 
@@ -75,13 +62,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
         {
             var gorev = _gorevService.GetirIdile(id);
 
-            GorevEditViewModel model = new GorevEditViewModel
-            {
-                Id = gorev.Id,
-                Ad = gorev.Ad,
-                Aciklama = gorev.Aciklama,
-                AciliyetId = gorev.AciliyetId
-            };
+            var model = _mapper.Map<GorevUpdateDto>(gorev);
 
             ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim", gorev.AciliyetId);
 
@@ -89,7 +70,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult GorevDuzenle(GorevEditViewModel model)
+        public IActionResult GorevDuzenle(GorevUpdateDto model)
         {
             if (ModelState.IsValid)
             {
@@ -103,6 +84,8 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
                 return RedirectToAction("Index");
             }
+
+            ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim", model.AciliyetId);
 
             return View(model);
         }

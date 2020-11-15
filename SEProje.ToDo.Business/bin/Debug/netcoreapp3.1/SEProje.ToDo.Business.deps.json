@@ -1645,6 +1645,9 @@
         }
       },
       "SEProje.ToDo.DTO/1.0.0": {
+        "dependencies": {
+          "SEProje.ToDo.Entities": "1.0.0"
+        },
         "runtime": {
           "SEProje.ToDo.DTO.dll": {}
         }

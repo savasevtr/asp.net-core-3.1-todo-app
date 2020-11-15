@@ -33,8 +33,15 @@ using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using SEProje.ToDo.DTO.DTOs.GorevDTOs;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e88edb87a23141d0a5287e0811b86519d4a3188b", @"/Areas/Admin/Views/IsEmri/Detaylar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"058fbb7f95d230aa5fd99e93c2b419acd2bf78c0", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"103d9fdbc94bb4210de8e75e4b08e42327675f06", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_IsEmri_Detaylar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<GorevListAllViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Admin", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -87,7 +94,7 @@ using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 #line hidden
 #nullable disable
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e88edb87a23141d0a5287e0811b86519d4a3188b6313", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e88edb87a23141d0a5287e0811b86519d4a3188b6523", async() => {
                 WriteLiteral("\r\n        Excel\r\n    ");
             }
             );
@@ -125,7 +132,7 @@ using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e88edb87a23141d0a5287e0811b86519d4a3188b9137", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e88edb87a23141d0a5287e0811b86519d4a3188b9347", async() => {
                 WriteLiteral("\r\n        Pdf\r\n    ");
             }
             );

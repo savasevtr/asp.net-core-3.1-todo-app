@@ -9,7 +9,7 @@ namespace SEProje.ToDo.Business.ValidationRules.FluentValidation
         {
             RuleFor(I => I.Ad).NotNull().WithMessage("Ad alanı gereklidir");
 
-            RuleFor(I => I.AciliyetId).ExclusiveBetween(1, int.MaxValue).WithMessage("Lütfen bir aciliyet durumu seçiniz");
+            RuleFor(I => I.AciliyetId).ExclusiveBetween(0, int.MaxValue).WithMessage("Lütfen bir aciliyet durumu seçiniz");
         }
     }
 }

@@ -33,8 +33,15 @@ using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using SEProje.ToDo.DTO.DTOs.GorevDTOs;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a1616e8fc791fd5309cf48df2ba78f735a936a0f", @"/Areas/Admin/Views/IsEmri/PersonelAta.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"058fbb7f95d230aa5fd99e93c2b419acd2bf78c0", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"103d9fdbc94bb4210de8e75e4b08e42327675f06", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_IsEmri_PersonelAta : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<GorevListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Admin", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -103,7 +110,7 @@ using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 #line hidden
 #nullable disable
             WriteLiteral("</strong> kelimesi için arama sonuçları:\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f8443", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f8653", async() => {
                 WriteLiteral("Aramayı Temizle");
             }
             );
@@ -147,7 +154,7 @@ using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 #line hidden
 #nullable disable
             WriteLiteral("        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f11404", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f11614", async() => {
                 WriteLiteral("\r\n            <input type=\"text\" name=\"search\"");
                 BeginWriteAttribute("value", " value=\"", 806, "\"", 821, 1);
 #nullable restore
@@ -234,7 +241,7 @@ WriteAttributeValue("", 814, search, 814, 7, false);
 #line hidden
 #nullable disable
             WriteLiteral("            <div class=\"card mb-3 border border-primary\">\r\n                <div class=\"row no-gutters\">\r\n                    <div class=\"col-md-4 p-4\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a1616e8fc791fd5309cf48df2ba78f735a936a0f16537", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a1616e8fc791fd5309cf48df2ba78f735a936a0f16747", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -283,7 +290,7 @@ AddHtmlAttributeValue("", 2147, item.Name, 2147, 10, false);
 #line hidden
 #nullable disable
             WriteLiteral(" </h5>\r\n                            <p class=\"card-text\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getirGorevAppUserId", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f19430", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getirGorevAppUserId", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f19640", async() => {
             }
             );
             __SEProje_ToDo_Web_TagHelpers_GorevAppUserIdTagHelper = CreateTagHelper<global::SEProje.ToDo.Web.TagHelpers.GorevAppUserIdTagHelper>();
@@ -312,7 +319,7 @@ __SEProje_ToDo_Web_TagHelpers_GorevAppUserIdTagHelper.AppUserId = item.Id;
 #line hidden
 #nullable disable
             WriteLiteral("</small>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f21318", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f21528", async() => {
                 WriteLiteral("Görevlendir");
             }
             );
@@ -396,7 +403,7 @@ WriteAttributeValue(" ", 3333, ViewBag.currentPage == i ? "active" : "", 3334, 4
 #line hidden
 #nullable disable
             WriteLiteral("                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f26532", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f26742", async() => {
 #nullable restore
 #line 78 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\IsEmri\PersonelAta.cshtml"
                                                                                                                                                                                       Write(i);
@@ -470,7 +477,7 @@ WriteAttributeValue(" ", 3333, ViewBag.currentPage == i ? "active" : "", 3334, 4
 #line hidden
 #nullable disable
             WriteLiteral("                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f31530", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1616e8fc791fd5309cf48df2ba78f735a936a0f31740", async() => {
 #nullable restore
 #line 82 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\IsEmri\PersonelAta.cshtml"
                                                                                                                                                            Write(i);

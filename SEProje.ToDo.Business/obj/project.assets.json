@@ -2557,6 +2557,9 @@
       "SEProje.ToDo.DTO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "SEProje.ToDo.Entities": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/SEProje.ToDo.DTO.dll": {}
         },
