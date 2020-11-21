@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.BaseControllers;
 using System;
 using System.IO;
 using System.Linq;
@@ -14,19 +15,17 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
 {
     [Area("Member")]
     [Authorize(Roles = "Member")]
-    public class ProfilController : Controller
+    public class ProfilController : BaseIdentityController
     {
-        private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
-        public ProfilController(UserManager<AppUser> userManager, IMapper mapper)
+        public ProfilController(UserManager<AppUser> userManager, IMapper mapper) : base(userManager)
         {
-            _userManager = userManager;
             _mapper = mapper;
         }
 
         public async Task<IActionResult> Index()
         {
-            var model = _mapper.Map<AppUserListDto>(await _userManager.FindByNameAsync(User.Identity.Name));
+            var model = _mapper.Map<AppUserListDto>(await GetirGirisYapanKullanici());
 
             return View(model);
         }
@@ -67,10 +66,7 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
                     return RedirectToAction("Index");
                 }
 
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
+                HataEkle(result.Errors);
             }
 
             return View(model);

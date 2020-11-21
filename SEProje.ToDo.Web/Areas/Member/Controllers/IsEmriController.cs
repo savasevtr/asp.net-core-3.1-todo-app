@@ -6,6 +6,7 @@ using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.GorevDTOs;
 using SEProje.ToDo.DTO.DTOs.RaporDTOs;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.BaseControllers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,17 +14,15 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
 {
     [Area("Member")]
     [Authorize(Roles = "Member")]
-    public class IsEmriController : Controller
+    public class IsEmriController : BaseIdentityController
     {
-        private readonly UserManager<AppUser> _userManager;
         private readonly IGorevService _gorevService;
         private readonly IRaporService _raporService;
         private readonly IBildirimService _bildirimService;
         private readonly IMapper _mapper;
 
-        public IsEmriController(UserManager<AppUser> userManager, IGorevService gorevService, IRaporService raporService, IBildirimService bildirimService, IMapper mapper)
+        public IsEmriController(UserManager<AppUser> userManager, IGorevService gorevService, IRaporService raporService, IBildirimService bildirimService, IMapper mapper) : base(userManager)
         {
-            _userManager = userManager;
             _gorevService = gorevService;
             _raporService = raporService;
             _bildirimService = bildirimService;
@@ -32,7 +31,7 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var user = await GetirGirisYapanKullanici();
 
             var model = _mapper.Map<List<GorevListAllDto>>(_gorevService.GetirTumTablolarla(x => x.AppUserId == user.Id && !x.Durum));
 
@@ -65,7 +64,7 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
                 });
 
                 var adminUsers = await _userManager.GetUsersInRoleAsync("Admin");
-                var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
+                var currentUser = await GetirGirisYapanKullanici();
 
                 foreach (var item in adminUsers)
                 {
@@ -117,7 +116,7 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
             _gorevService.Guncelle(gorev);
 
             var adminUsers = await _userManager.GetUsersInRoleAsync("Admin");
-            var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
+            var currentUser = await GetirGirisYapanKullanici();
 
             foreach (var item in adminUsers)
             {
