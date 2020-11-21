@@ -1,30 +1,31 @@
 ﻿@model AppUserListDto
+@using SEProje.ToDo.Web.TagHelpers
 
 <div class="border-right" id="sidebar-wrapper">
-    
+
     <div class="sidebar-heading">
         <img src="~/img/@Model.Picture" alt="@Model.Name" style="height: 10rem !important;" class="w-100 img-thumbnail" />
     </div>
 
     <div class="list-group list-group-flush">
 
-        <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Home" asp-active-actions="Index" asp-active-class="active">
             <i class="fas fa-home mr-2"></i> Başlangıç
         </a>
 
-        <a asp-area="Admin" asp-controller="Aciliyet" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Admin" asp-controller="Aciliyet" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Aciliyet">
             <i class="far fa-bell mr-2"></i> Aciliyet İşlemleri
         </a>
 
-        <a asp-area="Admin" asp-controller="Gorev" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Admin" asp-controller="Gorev" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Gorev">
             <i class="fas fa-tasks mr-2"></i> Görev İşlemleri
         </a>
 
-        <a asp-area="Admin" asp-controller="IsEmri" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Admin" asp-controller="IsEmri" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="IsEmri">
             <i class="far fa-edit mr-2"></i> İş Emirleri
         </a>
 
-        <a asp-area="Admin" asp-controller="Grafik" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Admin" asp-controller="Grafik" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Grafik">
             <i class="fas fa-chart-pie mr-2"></i> Grafikler
         </a>
 
@@ -32,16 +33,16 @@
             <i class="far fa-chart-bar mr-2"></i> İstatistikler
         </a>
 
-        <a asp-area="Admin" asp-controller="Bildirim" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Admin" asp-controller="Bildirim" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Bildirim">
             <i class="far fa-bell mr-2"></i> Bildirimler
 
             @if (ViewBag.bildirimSayisi > 0)
             {
-                <span class="badge badge-success float-right mt-1">@ViewBag.bildirimSayisi</span>
+            <span class="badge badge-success float-right mt-1">@ViewBag.bildirimSayisi</span>
             }
         </a>
 
-        <a asp-area="Admin" asp-controller="Profil" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Admin" asp-controller="Profil" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Profil">
             <i class="far fa-chart-bar mr-2"></i> Profilim
         </a>
 

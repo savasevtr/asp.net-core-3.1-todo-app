@@ -26,7 +26,7 @@ namespace SEProje.ToDo.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await GetirGirisYapanKullanici();
+                var user = await _userManager.FindByNameAsync(model.UserName);
 
                 if (user != null)
                 {
