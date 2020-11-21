@@ -2,18 +2,17 @@
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.BaseControllers;
 using System.Threading.Tasks;
 
 namespace SEProje.ToDo.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseIdentityController
     {
-        private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
 
-        public HomeController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public HomeController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager) : base(userManager)
         {
-            _userManager = userManager;
             _signInManager = signInManager;
         }
 
@@ -27,7 +26,7 @@ namespace SEProje.ToDo.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByNameAsync(model.UserName);
+                var user = await GetirGirisYapanKullanici();
 
                 if (user != null)
                 {
@@ -93,16 +92,10 @@ namespace SEProje.ToDo.Web.Controllers
                         return RedirectToAction("Index");
                     }
 
-                    foreach (var item in addRoleResult.Errors)
-                    {
-                        ModelState.AddModelError("", item.Description);
-                    }
+                    HataEkle(addRoleResult.Errors);
                 }
 
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
+                HataEkle(result.Errors);
             }
 
             return View(model);
