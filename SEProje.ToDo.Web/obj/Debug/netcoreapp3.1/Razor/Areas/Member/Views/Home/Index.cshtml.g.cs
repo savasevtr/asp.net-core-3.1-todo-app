@@ -26,8 +26,15 @@ using SEProje.ToDo.Web.Areas.Member.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Member\Views\_ViewImports.cshtml"
+using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"72ed5bdad480e9e423e160cb37315374a96bcd67", @"/Areas/Member/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c24a5e7e43a1661892ad0534120248c53c1c2c12", @"/Areas/Member/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0fa8c96dc6fa4dfff64e33f0bc1c9f87a7700ab7", @"/Areas/Member/Views/_ViewImports.cshtml")]
     public class Areas_Member_Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -26,8 +26,15 @@ using SEProje.ToDo.Web.Areas.Member.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Member\Views\_ViewImports.cshtml"
+using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"84d6eb2929f69b1916fc6e8ef656c71eb6d05688", @"/Areas/Member/Views/Gorev/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c24a5e7e43a1661892ad0534120248c53c1c2c12", @"/Areas/Member/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0fa8c96dc6fa4dfff64e33f0bc1c9f87a7700ab7", @"/Areas/Member/Views/_ViewImports.cshtml")]
     public class Areas_Member_Views_Gorev_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<GorevListAllViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("page-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -221,7 +228,7 @@ WriteAttributeValue(" ", 1952, ViewBag.currentpage == i ? "active" : "", 1953, 4
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6eb2929f69b1916fc6e8ef656c71eb6d0568810884", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d6eb2929f69b1916fc6e8ef656c71eb6d0568811098", async() => {
                 WriteLiteral("\r\n                    ");
 #nullable restore
 #line 61 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Member\Views\Gorev\Index.cshtml"
