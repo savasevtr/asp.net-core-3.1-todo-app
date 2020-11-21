@@ -14,27 +14,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 2 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Views\_ViewImports.cshtml"
-using SEProje.ToDo.Web.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Views\_ViewImports.cshtml"
-using SEProje.ToDo.Web.Areas.Admin.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Views\_ViewImports.cshtml"
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"09432aabe7ab9bfa5522e78213cbc20769466603", @"/Views/Shared/Components/Wrapper/Member.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5b42456b10e44e1633e8a52838e2ac18f9ed9027", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"919a7ebae42ac6ecee191cca61bd86405f8a9cd8", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_Wrapper_Member : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<AppUserListDto>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("height: 10rem !important;"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -75,7 +61,7 @@ using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\n<div class=\"border-right\" id=\"sidebar-wrapper\">\n\n    <div class=\"sidebar-heading\">\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "09432aabe7ab9bfa5522e78213cbc207694666037482", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "09432aabe7ab9bfa5522e78213cbc207694666037090", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -109,7 +95,7 @@ AddHtmlAttributeValue("", 151, Model.Name, 151, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n    </div>\n\n    <div class=\"list-group list-group-flush\">\n\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc207694666039684", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc207694666039292", async() => {
                 WriteLiteral("\n            <i class=\"fas fa-home mr-2\"></i> Başlangıç\n        ");
             }
             );
@@ -130,7 +116,7 @@ AddHtmlAttributeValue("", 151, Model.Name, 151, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660311398", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660311006", async() => {
                 WriteLiteral("\n            <i class=\"fas fa-arrow-circle-down mr-2\"></i> Gelen İş Emirleri\n        ");
             }
             );
@@ -151,7 +137,7 @@ AddHtmlAttributeValue("", 151, Model.Name, 151, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660313134", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660312742", async() => {
                 WriteLiteral("\n            <i class=\"fas fa-arrow-circle-up mr-2\"></i> Tamamlanan İşler\n        ");
             }
             );
@@ -172,7 +158,7 @@ AddHtmlAttributeValue("", 151, Model.Name, 151, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660314867", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660314475", async() => {
                 WriteLiteral("\n            <i class=\"far fa-bell mr-2\"></i> Bildirimler\n\n");
 #nullable restore
 #line 26 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Views\Shared\Components\Wrapper\Member.cshtml"
@@ -218,7 +204,7 @@ AddHtmlAttributeValue("", 151, Model.Name, 151, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660317473", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660317081", async() => {
                 WriteLiteral("\n            <i class=\"far fa-chart-bar mr-2\"></i> Profilim\n        ");
             }
             );
@@ -239,7 +225,7 @@ AddHtmlAttributeValue("", 151, Model.Name, 151, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660319192", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09432aabe7ab9bfa5522e78213cbc2076946660318800", async() => {
                 WriteLiteral("\n            <i class=\"fas fa-sign-out-alt mr-2\"></i> Çıkış Yap\n        ");
             }
             );

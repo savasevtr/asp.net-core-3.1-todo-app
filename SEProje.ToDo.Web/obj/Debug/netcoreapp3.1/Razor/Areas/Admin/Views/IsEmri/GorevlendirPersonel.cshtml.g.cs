@@ -14,41 +14,34 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 3 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
-using SEProje.ToDo.Web.Areas.Admin.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using SEProje.ToDo.DTO.DTOs.AciliyetDTOs;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+#line 4 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+#line 5 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using SEProje.ToDo.DTO.DTOs.GorevDTOs;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+#line 6 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5972fd574c5a05da30cd6b56685b1407430095ec", @"/Areas/Admin/Views/IsEmri/GorevlendirPersonel.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8a57c98de8fc559d094979c15df45df6c2f2570b", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ad76540c95b1272332d3a0db4e36336885fd1c2f", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_IsEmri_GorevlendirPersonel : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PersonelGorevlendirListDto>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Admin", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -96,7 +89,7 @@ using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h4 class=\"my-4\">Personel Görevlendirme</h4>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5972fd574c5a05da30cd6b56685b1407430095ec7168", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5972fd574c5a05da30cd6b56685b1407430095ec6954", async() => {
                 WriteLiteral("\r\n            <input type=\"hidden\" name=\"PersonelId\"");
                 BeginWriteAttribute("value", " value=\"", 413, "\"", 438, 1);
 #nullable restore
@@ -118,7 +111,7 @@ WriteAttributeValue("", 499, Model.Gorev.Id, 499, 15, false);
 #nullable disable
                 EndWriteAttribute();
                 WriteLiteral(" />\r\n            <div class=\"alert alert-info\">\r\n                <p class=\"lead\">Aşağıdaki göreve ilgili personel atanacaktır. Bu işlemi gerçekleştirmek istediğinizden emin misiniz?</p>\r\n            </div>\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5972fd574c5a05da30cd6b56685b1407430095ec8571", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5972fd574c5a05da30cd6b56685b1407430095ec8357", async() => {
                     WriteLiteral("Vazgeç");
                 }
                 );
@@ -223,7 +216,7 @@ WriteAttributeValue("", 499, Model.Gorev.Id, 499, 15, false);
             <div class=""row no-gutters"">
                 <div class=""col-md-4 p-4"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5972fd574c5a05da30cd6b56685b1407430095ec15095", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5972fd574c5a05da30cd6b56685b1407430095ec14881", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -272,7 +265,7 @@ AddHtmlAttributeValue("", 2028, Model.AppUser.Name, 2028, 19, false);
 #line hidden
 #nullable disable
             WriteLiteral("</h5>\r\n                        <p class=\"card-text\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getirGorevAppUserId", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5972fd574c5a05da30cd6b56685b1407430095ec18032", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getirGorevAppUserId", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5972fd574c5a05da30cd6b56685b1407430095ec17818", async() => {
             }
             );
             __SEProje_ToDo_Web_TagHelpers_GorevAppUserIdTagHelper = CreateTagHelper<global::SEProje.ToDo.Web.TagHelpers.GorevAppUserIdTagHelper>();

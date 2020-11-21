@@ -6,7 +6,6 @@ using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.DTO.DTOs.GorevDTOs;
 using SEProje.ToDo.Entities.Concrete;
-using SEProje.ToDo.Web.Areas.Admin.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,7 +78,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult GorevlendirPersonelTamamla(PersonelGorevlendirViewModel model)
+        public IActionResult GorevlendirPersonelTamamla(PersonelGorevlendirDto model)
         {
             var guncellenecekGorev = _gorevService.GetirIdile(model.GorevId);
             guncellenecekGorev.AppUserId = model.PersonelId;

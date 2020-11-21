@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.AciliyetDTOs;
 using SEProje.ToDo.Entities.Concrete;
-using SEProje.ToDo.Web.Areas.Admin.Models;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {

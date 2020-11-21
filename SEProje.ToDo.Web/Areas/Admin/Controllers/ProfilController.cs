@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
-using SEProje.ToDo.Web.Areas.Admin.Models;
 using System;
 using System.IO;
 using System.Linq;
