@@ -47,8 +47,15 @@ using SEProje.ToDo.DTO.DTOs.RaporDTOs;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Member\Views\_ViewImports.cshtml"
+using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cee04a226b29c169456bb5698f0bc2560c0c51ea", @"/Areas/Member/Views/IsEmri/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d0ad1697b9f7326672b9ba97f0449d498dd753db", @"/Areas/Member/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4b75cd43b1a2a08cdaec0a58403adfdb310856bb", @"/Areas/Member/Views/_ViewImports.cshtml")]
     public class Areas_Member_Views_IsEmri_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<GorevListAllDto>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Member", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -163,7 +170,7 @@ WriteAttributeValue("", 763, index, 763, 6, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cee04a226b29c169456bb5698f0bc2560c0c51ea9057", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cee04a226b29c169456bb5698f0bc2560c0c51ea9270", async() => {
                 WriteLiteral("\r\n                    <i class=\"fas fa-plus-circle mr-2\"></i>Rapor Yaz\r\n                ");
             }
             );
@@ -253,7 +260,7 @@ WriteAttributeValue("", 1542, index, 1542, 6, false);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                <td class=\"text-center\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cee04a226b29c169456bb5698f0bc2560c0c51ea14387", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cee04a226b29c169456bb5698f0bc2560c0c51ea14600", async() => {
                 WriteLiteral("Düzenle");
             }
             );

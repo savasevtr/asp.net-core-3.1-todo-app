@@ -47,8 +47,15 @@ using SEProje.ToDo.DTO.DTOs.RaporDTOs;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\Areas\Member\Views\_ViewImports.cshtml"
+using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2c29f01b38b946cf5070cc44febbd21e1450a3d4", @"/Areas/Member/Views/Bildirim/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d0ad1697b9f7326672b9ba97f0449d498dd753db", @"/Areas/Member/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4b75cd43b1a2a08cdaec0a58403adfdb310856bb", @"/Areas/Member/Views/_ViewImports.cshtml")]
     public class Areas_Member_Views_Bildirim_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BildirimListDto>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -137,7 +144,7 @@ using SEProje.ToDo.DTO.DTOs.RaporDTOs;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n\r\n                    <td class=\"text-center\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c29f01b38b946cf5070cc44febbd21e1450a3d47473", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c29f01b38b946cf5070cc44febbd21e1450a3d47686", async() => {
                 WriteLiteral("\r\n\r\n                            <input type=\"hidden\" name=\"id\"");
                 BeginWriteAttribute("value", " value=\"", 994, "\"", 1010, 1);
 #nullable restore
