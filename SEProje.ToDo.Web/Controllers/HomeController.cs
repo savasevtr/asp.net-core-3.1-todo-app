@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Models;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ namespace SEProje.ToDo.Web.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IMapper mapper;
 
         public HomeController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
@@ -19,11 +22,11 @@ namespace SEProje.ToDo.Web.Controllers
 
         public IActionResult Index()
         {
-            return View(new AppUserSignInViewModel());
+            return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(AppUserSignInViewModel model)
+        public async Task<IActionResult> Index(AppUserSignInDto model)
         {
             if (ModelState.IsValid)
             {
@@ -66,11 +69,11 @@ namespace SEProje.ToDo.Web.Controllers
 
         public IActionResult KayitOl()
         {
-            return View(new AppUserRegisterViewModel());
+            return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> KayitOl(AppUserRegisterViewModel model)
+        public async Task<IActionResult> KayitOl(AppUserAddDto model)
         {
             if (ModelState.IsValid)
             {

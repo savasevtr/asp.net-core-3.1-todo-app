@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.Areas.Admin.Models;
 using System;
@@ -16,30 +18,21 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
     public class ProfilController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly IMapper _mapper;
 
-        public ProfilController(UserManager<AppUser> userManager)
+        public ProfilController(UserManager<AppUser> userManager, IMapper mapper)
         {
             _userManager = userManager;
+            _mapper = mapper;
         }
 
         public async Task<IActionResult> Index()
         {
-            var appUer = await _userManager.FindByNameAsync(User.Identity.Name);
-
-            AppUserListViewModel appUserListViewModel = new AppUserListViewModel
-            {
-                Id = appUer.Id,
-                Name = appUer.Name,
-                Surname = appUer.Surname,
-                Email = appUer.Email,
-                Picture = appUer.Picture
-            };
-
-            return View(appUserListViewModel);
+            return View(_mapper.Map<AppUserListDto>(await _userManager.FindByNameAsync(User.Identity.Name)));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(AppUserListViewModel model, IFormFile Picture)
+        public async Task<IActionResult> Index(AppUserListDto model, IFormFile Picture)
         {
             if (ModelState.IsValid)
             {
