@@ -6,6 +6,7 @@ using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.DTO.DTOs.GorevDTOs;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.BaseControllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,10 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
-    public class IsEmriController : Controller
+    public class IsEmriController : BaseIdentityController
     {
         private readonly IAppUserService _appUserService;
         private readonly IGorevService _gorevService;
-        private readonly UserManager<AppUser> _userManager;
         private readonly IDosyaService _dosyaService;
         private readonly IBildirimService _bildirimService;
         private readonly IMapper _mapper;
@@ -30,10 +30,9 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             IDosyaService dosyaService,
             IBildirimService bildirimService,
             IMapper mapper
-        ) {
+        ) : base(userManager) {
             _appUserService = appUserService;
             _gorevService = gorevService;
-            _userManager = userManager;
             _dosyaService = dosyaService;
             _bildirimService = bildirimService;
             _mapper = mapper;
@@ -51,10 +50,8 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
             ViewBag.currentPage = page;
             ViewBag.search = search;
 
-            int pageCount;
-            
-            var personeller = _mapper.Map<List<AppUserListDto>>(_appUserService.GetirAdminOlmayanlar(out pageCount, search, page));
-            
+            var personeller = _mapper.Map<List<AppUserListDto>>(_appUserService.GetirAdminOlmayanlar(out int pageCount, search, page));
+
             ViewBag.pageCount = pageCount;
 
             ViewBag.Personeller = personeller;
@@ -70,9 +67,11 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
             var gorevListDto = _mapper.Map<GorevListDto>(_gorevService.GetirAclliyetIleId(model.GorevId));
 
-            PersonelGorevlendirListDto personelGorevlendirListDto = new PersonelGorevlendirListDto();
-            personelGorevlendirListDto.AppUser = userListDto;
-            personelGorevlendirListDto.Gorev = gorevListDto;
+            PersonelGorevlendirListDto personelGorevlendirListDto = new PersonelGorevlendirListDto
+            {
+                AppUser = userListDto,
+                Gorev = gorevListDto
+            };
 
             return View(personelGorevlendirListDto);
         }

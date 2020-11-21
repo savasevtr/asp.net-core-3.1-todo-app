@@ -7,27 +7,26 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.BaseControllers;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
-    public class BildirimController : Controller
+    public class BildirimController : BaseIdentityController
     {
         private readonly IBildirimService _bildirimService;
-        private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
 
-        public BildirimController(IBildirimService bildirimService, UserManager<AppUser> userManager, IMapper mapper)
+        public BildirimController(IBildirimService bildirimService, UserManager<AppUser> userManager, IMapper mapper) : base(userManager)
         {
             _bildirimService = bildirimService;
-            _userManager = userManager;
             _mapper = mapper;
         }
 
         public async Task<IActionResult> Index()
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var user = await GetirGirisYapanKullanici();
 
             var models = _mapper.Map<List<BildirimListDto>>(_bildirimService.GetirOkunmayanlar(user.Id));
 

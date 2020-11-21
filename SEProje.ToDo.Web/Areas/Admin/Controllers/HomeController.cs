@@ -3,30 +3,29 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.BaseControllers;
 using System.Threading.Tasks;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
-    public class HomeController : Controller
+    public class HomeController : BaseIdentityController
     {
         private readonly IGorevService _gorevService;
         private readonly IBildirimService _bildirimService;
-        private readonly UserManager<AppUser> _userManager;
         private readonly IRaporService _raporService;
 
-        public HomeController(IGorevService gorevService, IBildirimService bildirimService, UserManager<AppUser> userManager, IRaporService raporService)
+        public HomeController(IGorevService gorevService, IBildirimService bildirimService, UserManager<AppUser> userManager, IRaporService raporService) : base(userManager)
         {
             _gorevService = gorevService;
             _bildirimService = bildirimService;
-            _userManager = userManager;
             _raporService = raporService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var user = await GetirGirisYapanKullanici();
 
             ViewBag.atanmayiBekleyenGorevSayisi = _gorevService.GetirGorevSayisiAtanmayiBekleyen();
             ViewBag.tamamlananGorevSayisi = _gorevService.GetirGorevSayisiTamamlanan();

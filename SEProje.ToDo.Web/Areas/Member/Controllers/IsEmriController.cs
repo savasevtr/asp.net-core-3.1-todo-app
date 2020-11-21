@@ -43,9 +43,11 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
         {
             var gorev = _gorevService.GetirAclliyetIleId(id);
 
-            RaporAddDto model = new RaporAddDto();
-            model.GorevId = id;
-            model.Gorev = gorev;
+            RaporAddDto model = new RaporAddDto
+            {
+                GorevId = id,
+                Gorev = gorev
+            };
 
             return View(model);
         }

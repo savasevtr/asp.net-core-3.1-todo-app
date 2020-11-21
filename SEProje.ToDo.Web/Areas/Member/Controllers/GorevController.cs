@@ -28,9 +28,8 @@ namespace SEProje.ToDo.Web.Areas.Member.Controllers
         public async Task<IActionResult> Index(int page = 1)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            int pageCount;
 
-            var model = _mapper.Map<List<GorevListAllDto>>(_gorevService.GetirTumTablolarlaTamamlanan(out pageCount, user.Id, page));
+            var model = _mapper.Map<List<GorevListAllDto>>(_gorevService.GetirTumTablolarlaTamamlanan(out int pageCount, user.Id, page));
 
             ViewBag.pageCount = pageCount;
             ViewBag.currentPage = page;

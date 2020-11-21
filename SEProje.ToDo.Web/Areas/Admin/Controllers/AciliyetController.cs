@@ -23,18 +23,6 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            //List<Aciliyet> aciliyetler = _aciliyetService.GetirHepsi();
-
-            //List<AciliyetListViewModel> model = new List<AciliyetListViewModel>();
-
-            //foreach (var item in aciliyetler)
-            //{
-            //    AciliyetListViewModel aciliyetListViewModel = new AciliyetListViewModel();
-            //    aciliyetListViewModel.Id = item.Id;
-            //    aciliyetListViewModel.Tanim = item.Tanim;
-            //    model.Add(aciliyetListViewModel);
-            //}
-
             var model = _mapper.Map<List<AciliyetListDto>>(_aciliyetService.GetirHepsi());
 
             return View(model);
