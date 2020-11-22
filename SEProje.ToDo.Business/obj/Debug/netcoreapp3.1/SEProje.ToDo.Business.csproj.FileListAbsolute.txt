@@ -14,3 +14,4 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\bin\Debug\netcoreapp3.1\SEProje.ToDo.DTO.dll
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\bin\Debug\netcoreapp3.1\SEProje.ToDo.DTO.pdb
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\obj\Debug\netcoreapp3.1\SEProje.ToDo.Business.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Business\bin\Debug\netcoreapp3.1\NLog.config

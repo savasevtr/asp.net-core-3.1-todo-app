@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
@@ -12,10 +13,12 @@ namespace SEProje.ToDo.Web.Controllers
     public class HomeController : BaseIdentityController
     {
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly ICustomLogger _customLogger;
 
-        public HomeController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager) : base(userManager)
+        public HomeController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ICustomLogger customLogger) : base(userManager)
         {
             _signInManager = signInManager;
+            _customLogger = customLogger;
         }
 
         public IActionResult Index()
@@ -127,6 +130,8 @@ namespace SEProje.ToDo.Web.Controllers
 
             ViewBag.Path = exceptionHandlerPathFeature.Path;
             ViewBag.Message = exceptionHandlerPathFeature.Error.Message;
+
+            _customLogger.LogError($"Hatanın oluştuğu yer: {exceptionHandlerPathFeature.Path}\nHata Mesajı: {exceptionHandlerPathFeature.Error.Message}\nStack Trace: {exceptionHandlerPathFeature.Error.StackTrace}\n");
 
             return View();
         }

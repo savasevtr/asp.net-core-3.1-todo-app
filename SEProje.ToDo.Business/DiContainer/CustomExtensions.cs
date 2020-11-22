@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SEProje.ToDo.Business.Concrete;
+using SEProje.ToDo.Business.CustomLogger;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using SEProje.ToDo.DataAccess.Interfaces;
@@ -22,6 +23,8 @@ namespace SEProje.ToDo.Business.DiContainer
             services.AddScoped<IRaporDal, EfRaporRepository>();
             services.AddScoped<IAppUserDal, EfAppUserRepository>();
             services.AddScoped<IBildirimDal, EfBildirimRepository>();
+
+            services.AddTransient<ICustomLogger, NLogLogger>();
         }
     }
 }

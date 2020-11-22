@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qy/6YkQuB+FjgupbL3Q1wHHnDEZ3XceJP9G/BuFF2dUM/ZSgVN1JdxnLSzXBmvoMT2OPFTffwz+NXTkho9NMqA==",
+  "dgSpecHash": "dgy0ZF0nT3wu0bdl+rGmRwIojUBf+RUYK/LN3hw9HjAAd8CMYhV7XU3VY4MM3Sk8S2+v+bvtZ6XRHCeYoVmyOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\SE\\source\\repos\\UdemyToDo\\SEProje.ToDo.Web\\SEProje.ToDo.Web.csproj",
   "expectedPackageFiles": [
@@ -91,6 +91,9 @@
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\nlog\\4.7.5\\nlog.4.7.5.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\nlog.config\\4.7.5\\nlog.config.4.7.5.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\nlog.schema\\4.7.5\\nlog.schema.4.7.5.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\portable.bouncycastle.1.8.8.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

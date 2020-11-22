@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GGaNQvs8KljRsKp4toFLa6ngHPuEKLYmntpnBrJxhWcWDOc2RmTjdnl3A6CgTtC72V+z9k15wtMzJ/jgfFyGNw==",
+  "dgSpecHash": "ppYxIK/FsUmQmDOL/Ql1uypMmXI2/QGOuJ3epzJCJdkc0+7tLgDl3o7q0zeknyaxnYZy2HlnvVrT6Zl/Kt8pJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\SE\\source\\repos\\UdemyToDo\\SEProje.ToDo.Business\\SEProje.ToDo.Business.csproj",
   "expectedPackageFiles": [
@@ -69,6 +69,9 @@
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\nlog\\4.7.5\\nlog.4.7.5.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\nlog.config\\4.7.5\\nlog.config.4.7.5.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\nlog.schema\\4.7.5\\nlog.schema.4.7.5.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\portable.bouncycastle.1.8.8.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
