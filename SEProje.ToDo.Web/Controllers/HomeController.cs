@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
+using System;
 using System.Threading.Tasks;
 
 namespace SEProje.ToDo.Web.Controllers
@@ -117,6 +119,21 @@ namespace SEProje.ToDo.Web.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult Error()
+        {
+            var exceptionHandlerPathFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+
+            ViewBag.Path = exceptionHandlerPathFeature.Path;
+            ViewBag.Message = exceptionHandlerPathFeature.Error.Message;
+
+            return View();
+        }
+
+        public void Hata()
+        {
+            throw new Exception("Test hata mesajı");
         }
     }
 }

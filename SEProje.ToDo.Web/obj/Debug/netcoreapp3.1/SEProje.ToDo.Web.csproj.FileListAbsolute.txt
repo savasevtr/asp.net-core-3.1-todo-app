@@ -203,3 +203,4 @@ C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\bin\Debug\netcoreapp3.1\SEPr
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\SEProje.ToDo.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\SEProje.ToDo.Web.styles.css
 C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\StatusCode.cshtml.g.cs
+C:\Users\SE\source\repos\UdemyToDo\SEProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Error.cshtml.g.cs

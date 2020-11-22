@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+    Layout = "~/Views/Shared/_StandartLayout.cshtml";
+}
+
+<div class="row mt-5">
+    <div class="col-md-12 justify-content-center lead">
+        <p class="lead">Bir hata oluştu!</p>
+        <p>Hatanın gerçekleştiği yer: @ViewBag.Path</p>
+        <p>Hata Mesajı: @ViewBag.Message</p>
+    </div>
+</div>
