@@ -107,5 +107,16 @@ namespace SEProje.ToDo.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult StatusCode(int? code)
+        {
+            if (code == 404)
+            {
+                ViewBag.Code = code;
+                ViewBag.Message = "Sayfa Bulunamadı!";
+            }
+
+            return View();
+        }
     }
 }
