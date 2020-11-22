@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.DTO.DTOs.GorevDTOs;
+using SEProje.ToDo.DTO.DTOs.RaporDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
 using SEProje.ToDo.Web.StringInfo;
@@ -101,7 +102,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
         public IActionResult GetirExcel(int id)
         {
-            var raporlar = _gorevService.GetirRaporlarileId(id).Raporlar;
+            var raporlar = _mapper.Map<List<RaporDosyaDto>>(_gorevService.GetirRaporlarileId(id).Raporlar);
 
             var fileContents = _dosyaService.AktarExcel(raporlar);
             string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
@@ -112,7 +113,7 @@ namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 
         public IActionResult GetirPdf(int id)
         {
-            var raporlar = _gorevService.GetirRaporlarileId(id).Raporlar;
+            var raporlar = _mapper.Map<List<RaporDosyaDto>>(_gorevService.GetirRaporlarileId(id).Raporlar);
 
             var virtualPath = _dosyaService.AktarPdf(raporlar);
             string fileDownloadName = Guid.NewGuid() + ".pdf";
