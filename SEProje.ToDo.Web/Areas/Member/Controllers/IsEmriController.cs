@@ -7,13 +7,14 @@ using SEProje.ToDo.DTO.DTOs.GorevDTOs;
 using SEProje.ToDo.DTO.DTOs.RaporDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
+using SEProje.ToDo.Web.StringInfo;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SEProje.ToDo.Web.Areas.Member.Controllers
 {
-    [Area("Member")]
-    [Authorize(Roles = "Member")]
+    [Authorize(Roles = RoleInfo.Member)]
+    [Area(AreaInfo.Member)]
     public class IsEmriController : BaseIdentityController
     {
         private readonly IGorevService _gorevService;

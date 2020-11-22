@@ -8,19 +8,19 @@
 
     <div class="list-group list-group-flush">
 
-        <a asp-area="Member" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Member" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Home" asp-active-actions="Index" asp-active-class="active">
             <i class="fas fa-home mr-2"></i> Başlangıç
         </a>
 
-        <a asp-area="Member" asp-controller="IsEmri" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Member" asp-controller="IsEmri" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="IsEmri">
             <i class="fas fa-arrow-circle-down mr-2"></i> Gelen İş Emirleri
         </a>
 
-        <a asp-area="Member" asp-controller="Gorev" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Member" asp-controller="Gorev" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Gorev">
             <i class="fas fa-arrow-circle-up mr-2"></i> Tamamlanan İşler
         </a>
 
-        <a asp-area="Member" asp-controller="Bildirim" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Member" asp-controller="Bildirim" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Bildirim">
             <i class="far fa-bell mr-2"></i> Bildirimler
 
             @if (ViewBag.bildirimSayisi > 0)
@@ -29,7 +29,7 @@
             }
         </a>
 
-        <a asp-area="Member" asp-controller="Profil" asp-action="Index" class="list-group-item list-group-item-action">
+        <a asp-area="Member" asp-controller="Profil" asp-action="Index" class="list-group-item list-group-item-action" asp-active-controllers="Profil">
             <i class="far fa-chart-bar mr-2"></i> Profilim
         </a>
 

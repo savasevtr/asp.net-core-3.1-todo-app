@@ -5,11 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.AciliyetDTOs;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.StringInfo;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
     public class AciliyetController : Controller
     {
         private readonly IAciliyetService _aciliyetService;

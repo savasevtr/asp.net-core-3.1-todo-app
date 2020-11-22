@@ -6,11 +6,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.GorevDTOs;
 using SEProje.ToDo.Entities.Concrete;
+using SEProje.ToDo.Web.StringInfo;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
     public class GorevController : Controller
     {
         private readonly IGorevService _gorevService;

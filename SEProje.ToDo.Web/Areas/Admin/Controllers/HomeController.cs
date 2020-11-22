@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
+using SEProje.ToDo.Web.StringInfo;
 using System.Threading.Tasks;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
     public class HomeController : BaseIdentityController
     {
         private readonly IGorevService _gorevService;

@@ -8,11 +8,12 @@ using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.DTO.DTOs.BildirimDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
+using SEProje.ToDo.Web.StringInfo;
 
 namespace SEProje.ToDo.Web.Areas.Member.Controllers
 {
-    [Authorize(Roles = "Member")]
-    [Area("Member")]
+    [Authorize(Roles = RoleInfo.Member)]
+    [Area(AreaInfo.Member)]
     public class BildirimController : BaseIdentityController
     {
         private readonly IBildirimService _bildirimService;

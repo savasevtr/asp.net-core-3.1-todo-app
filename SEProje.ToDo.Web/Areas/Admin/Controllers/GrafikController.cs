@@ -2,11 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SEProje.ToDo.Business.Interfaces;
+using SEProje.ToDo.Web.StringInfo;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
     public class GrafikController : Controller
     {
         private readonly IAppUserService _appUserService;

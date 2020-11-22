@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.DTO.DTOs.AppUserDTOs;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
+using SEProje.ToDo.Web.StringInfo;
 using System;
 using System.IO;
 using System.Linq;
@@ -13,8 +14,8 @@ using System.Threading.Tasks;
 
 namespace SEProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
     public class ProfilController : BaseIdentityController
     {
         private readonly IMapper _mapper;

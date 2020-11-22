@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using SEProje.ToDo.Business.Interfaces;
 using SEProje.ToDo.Entities.Concrete;
 using SEProje.ToDo.Web.BaseControllers;
+using SEProje.ToDo.Web.StringInfo;
 using System.Threading.Tasks;
 
 namespace SEProje.ToDo.Web.Areas.Member.Controllers
 {
-    [Authorize(Roles = "Member")]
-    [Area("Member")]
+    [Authorize(Roles = RoleInfo.Member)]
+    [Area(AreaInfo.Member)]
     public class HomeController : BaseIdentityController
     {
         private readonly IRaporService _raporService;
